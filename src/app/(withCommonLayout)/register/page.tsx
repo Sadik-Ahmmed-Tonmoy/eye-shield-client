@@ -4,7 +4,7 @@ import { RegisterWithEmail } from './RegisterWithEmail';
 const RegisterPage = () => {
     return (
         <div>
-            <RegisterWithEmail/>
+            <RegisterWithEmail/>  
         </div>
     );
 };
