@@ -80,7 +80,7 @@ export function RegisterWithEmail() {
                                 <span className="text-black font-semibold">Register</span>
                             </Link> */}
         <LinkPreview
-          url="http://localhost:3000/login"
+          url="/login"
           imageSrc="https://i.ibb.co/T8z2p8G/banner-img.webp"
           isStatic
           className="font-bold bg-clip-text text-transparent bg-gradient-to-br from-[#00a76b] to-[#00a76b] dark:text-[#00a76b]"

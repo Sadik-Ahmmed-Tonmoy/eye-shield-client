@@ -62,14 +62,6 @@ const PCNavBar = () => {
           <h3 className="text-2xl  me-36">LOGO</h3>
         </Link>
         <Menu setActive={setActive}>
-          {/* <MenuItem setActive={setActive} active={active} item="Home">
-            <div className="flex flex-col space-y-4 text-sm">
-              <HoveredLink href="/web-dev">Web Development</HoveredLink>
-              <HoveredLink href="/interface-design">Interface Design</HoveredLink>
-              <HoveredLink href="/seo">Search Engine Optimization</HoveredLink>
-              <HoveredLink href="/branding">Branding</HoveredLink>
-            </div>
-          </MenuItem> */}
           <Link  href={"/"}><p onMouseEnter={()=> setActive(null)}>Home</p></Link>
           <MenuItem setActive={setActive} active={active} item="Sunglass">
             <div className="  text-sm grid grid-cols-2 gap-10 p-4">
@@ -132,7 +124,8 @@ const PCNavBar = () => {
           </MenuItem>
         </Menu>
         <div className=" flex items-center gap-5 text-xs whitespace-nowrap">
-          <button className={`${styles.accountButton} ${styles.textHoverEffect}`}>
+        <Link href={"/login"}>
+        <button className={`${styles.accountButton} ${styles.textHoverEffect}`}>
             <BsPerson className="w-6 h-6" />
 
             <span className="relative">
@@ -140,6 +133,7 @@ const PCNavBar = () => {
               <span className={styles.text}>Account</span>
             </span>
           </button>
+          </Link>
 
           <button className={`${styles.accountButton} ${styles.textHoverEffect}`}>
             <AiOutlineHeart className="w-6 h-6 " />
