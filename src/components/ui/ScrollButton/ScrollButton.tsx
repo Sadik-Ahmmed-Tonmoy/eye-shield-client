@@ -4,10 +4,9 @@ import { Tooltip } from 'antd';
 interface ScrollButtonProps {
     to: string;
     name: string;
-    isBrandOpen: boolean;
 }
 
-const ScrollButton: React.FC<ScrollButtonProps> = ({ to, name, isBrandOpen }) => {
+const ScrollButton: React.FC<ScrollButtonProps> = ({ to, name }) => {
     const handleClick = () => {
         const element = document.getElementById(to);
         if (element) {
@@ -16,7 +15,7 @@ const ScrollButton: React.FC<ScrollButtonProps> = ({ to, name, isBrandOpen }) =>
     };
 
     return (
-        <Tooltip placement="left" title={name} className={`${isBrandOpen ? "block" : "hidden"}`}>
+        <Tooltip placement="left" title={name} >
             <p
                 className="text-[12px] leading-[12px] my-[0.5px] hover:text-primary-color"
                 key={name}

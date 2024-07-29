@@ -32,19 +32,19 @@ export const MenuItem = ({
   return (
     <div onMouseEnter={() => setActive(item)} className="relative ">
       <motion.p transition={{ duration: 0.3 }} className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white">
-      {href ? (
-  <Link href={href}>
-    <span className={`${active === item ? "text-[#00a76b]" : ""} relative group`}>
-      {item}
-      <span className="absolute left-0 -bottom-5 h-0.5 w-full bg-[#00a76b] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
-    </span>
-  </Link>
-) : (
-  <span className={`${active === item ? "text-[#00a76b]" : ""} relative group`}>
-    {item}
-    <span className="absolute left-0 -bottom-5 h-0.5 w-full bg-[#00a76b] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
-  </span>
-)}
+        {href ? (
+          <Link href={href}>
+            <span className={`${active === item ? "text-[#00a76b]" : ""} relative group`}>
+              {item}
+              <span className="absolute left-0 -bottom-5 h-0.5 w-full bg-[#00a76b] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
+            </span>
+          </Link>
+        ) : (
+          <span className={`${active === item ? "text-[#00a76b]" : ""} relative group`}>
+            {item}
+            <span className="absolute left-0 -bottom-5 h-0.5 w-full bg-[#00a76b] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
+          </span>
+        )}
       </motion.p>
       {active !== null && (
         <motion.div initial={{ opacity: 0, scale: 0.85, y: 10 }} animate={{ opacity: 1, scale: 1, y: 0 }} transition={transition}>
@@ -70,11 +70,22 @@ export const MenuItem = ({
   );
 };
 
-export const Menu = ({ setActive, children, className }: { setActive: (item: string | null) => void; children: React.ReactNode, className?:string }) => {
+export const Menu = ({
+  setActive,
+  children,
+  className,
+}: {
+  setActive: (item: string | null) => void;
+  children: React.ReactNode;
+  className?: string;
+}) => {
   return (
     <nav
       onMouseLeave={() => setActive(null)} // resets the state
-      className={cn("relative border-transparent dark:bg-transparent dark:border-white/[0.2]  flex justify-center space-x-4 px-8 py-6 z-40", className)}
+      className={cn(
+        "relative border-transparent dark:bg-transparent dark:border-white/[0.2]  flex justify-center space-x-4 px-8 py-6 z-40",
+        className
+      )}
     >
       {children}
     </nav>
