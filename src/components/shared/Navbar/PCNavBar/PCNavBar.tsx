@@ -9,6 +9,7 @@ import { BsPerson } from "react-icons/bs";
 import { MdOutlineShoppingBag } from "react-icons/md";
 import styles from "./PCNavBar.module.css";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
+import Image from "next/image";
 
 const PCNavBar = () => {
   const [active, setActive] = useState<string | null>(null);
@@ -133,19 +134,54 @@ const PCNavBar = () => {
 
         <Menu setActive={setActive}>
           <Link  href={"/"}><p onMouseEnter={()=> setActive(null)}>Home</p></Link>
-          <MenuItem setActive={setActive} active={active} item="Sunglass">
-            <div className="  text-sm grid grid-cols-2 gap-10 p-4">
+          <MenuItem setActive={setActive} active={active} item="Sunglasses" href="/ssss">
+            <div className="  text-sm grid grid-cols-3 gap-10 p-4">
+              <div className="flex items-start gap-4">
+                <div>
+                  <Image src={"https://img.freepik.com/premium-photo/mens-sunglasses-no-background_943281-105141.jpg?w=740"} className="rounded-md" height={150} width={150} alt=""/>
+                </div>
+                <div className="flex flex-col gap-1">
+                  <h5 className="text-xl font-bold">Men&apos;s Sunglasses</h5>
+                  <p className="text-base font-medium">Casual</p>
+                  <p className="text-base font-medium">Sports</p>
+                  <p className="text-base font-medium">Luxury</p>
+                </div>
+              </div>
               <ProductItem
-                title="Men"
-                href="https://algochurn.com"
-                src="https://assets.aceternity.com/demos/algochurn.webp"
-                description="Prepare for tech interviews like never before."
+                title="Men's Sunglasses"
+                href="/sunglasses/men"
+                src="https://img.freepik.com/premium-photo/mens-sunglasses-no-background_943281-105141.jpg?w=740"
+                description="Stylish sunglasses for men"
               />
               <ProductItem
                 title="Women"
                 href="https://tailwindmasterkit.com"
                 src="https://assets.aceternity.com/demos/tailwindmasterkit.webp"
                 description="Production ready Tailwind css components for your next project"
+              />
+              <ProductItem
+                title="Kids"
+                href="https://gomoonbeam.com"
+                src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
+                description="Never write from scratch again. Go from idea to blog in minutes."
+              />
+              <ProductItem
+                title="Kids"
+                href="https://gomoonbeam.com"
+                src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
+                description="Never write from scratch again. Go from idea to blog in minutes."
+              />
+              <ProductItem
+                title="Kids"
+                href="https://gomoonbeam.com"
+                src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
+                description="Never write from scratch again. Go from idea to blog in minutes."
+              />
+              <ProductItem
+                title="Kids"
+                href="https://gomoonbeam.com"
+                src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
+                description="Never write from scratch again. Go from idea to blog in minutes."
               />
               <ProductItem
                 title="Kids"

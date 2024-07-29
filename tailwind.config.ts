@@ -26,6 +26,41 @@ const config: Config = {
       boxShadow: {
         input: `0px 2px 3px -1px rgba(0,0,0,0.1), 0px 1px 0px 0px rgba(25,28,33,0.02), 0px 0px 0px 1px rgba(25,28,33,0.08)`,
       },
+
+      animation: {
+        fadeIn: 'fadeIn 1s ease-in-out',
+        slideIn: 'slideIn 1s ease-in-out',
+        bounce: 'bounce 1.5s infinite',
+        hoverFade: 'hoverFade 0.5s ease-in-out',
+        hoverSlide: 'hoverSlide 0.5s ease-in-out',
+        hoverBounce: 'hoverBounce 0.5s ease-in-out',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0', transform: 'translateY(-10px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        slideIn: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(0)' },
+        },
+        bounce: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+        hoverFade: {
+          '0%': { opacity: '0.5', transform: 'translateY(0)' },
+          '100%': { opacity: '1', transform: 'translateY(-10px)' },
+        },
+        hoverSlide: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(10px)' },
+        },
+        hoverBounce: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-5px)' },
+        },
+      },
     },
   },
   darkMode: "class",
