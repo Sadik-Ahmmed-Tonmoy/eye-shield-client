@@ -1,7 +1,6 @@
 import React from "react";
 import { Controller, useFormContext } from "react-hook-form";
 import { cn } from "@/lib/utils";
-import { Input } from "../aceternityUI/input";
 
 type TInputProps = {
   name: string;
@@ -33,15 +32,7 @@ const MyFormInputHTML = ({
         control={control}
         name={name}
         render={({ field }) => (
-          // <input
-          //   id={name}
-          //   {...field}
-          //   type={type}
-          //   value={field.value || ""} // Ensure the input is always controlled
-          //   className={cn("border border-gray-300 rounded-md p-2 w-full", inputClassName)}
-          //   {...rest}
-          // />
-          <Input
+          <input
             id={name}
             {...field}
             type={type}

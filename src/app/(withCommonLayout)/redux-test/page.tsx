@@ -2,15 +2,11 @@
 
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { decrement, increment } from "@/redux/features/counter/counterSlice";
-import { hideColor, showColor } from "@/redux/features/showColorSlice/ShowColorSlice";
 import { RootState } from "@/redux/store";
-import React from "react";
-import {Button, Calendar} from "@nextui-org/react";
-import {parseDate} from '@internationalized/date';
+import { Button } from "@nextui-org/react";
 
 const ReduxTest = () => {
   const count = useAppSelector((state: RootState) => state.counter.value);
-  const isShowColor = useAppSelector((state: RootState) => state.showColor.value);
   const dispatch = useAppDispatch();
   return (
     <>
@@ -31,7 +27,7 @@ const ReduxTest = () => {
       </div>
 <p className="mt-8">      show showColor</p>
       <div>
-        <div className="flex  gap-5">
+        {/* <div className="flex  gap-5">
           <button aria-label="Increment value" onClick={() => dispatch(showColor())}>
             show Color
           </button>
@@ -39,7 +35,7 @@ const ReduxTest = () => {
           <button aria-label="Decrement value" onClick={() => dispatch(hideColor())}>
             hide Color
           </button>
-        </div>
+        </div> */}
       </div>
     </div>
     
