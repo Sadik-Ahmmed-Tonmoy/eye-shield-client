@@ -13,6 +13,8 @@
     "@radix-ui/react-hover-card": "^1.1.1",
     "@radix-ui/react-label": "^2.1.0",
     "@reduxjs/toolkit": "^2.2.6",
+    "@splinetool/react-spline": "^4.0.0",
+    "@splinetool/runtime": "^1.9.3",
     "@tabler/icons-react": "^3.11.0",
     "antd": "^5.19.2",
     "clsx": "^2.1.1",
