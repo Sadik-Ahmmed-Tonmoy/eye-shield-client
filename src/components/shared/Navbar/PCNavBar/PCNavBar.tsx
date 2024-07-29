@@ -10,6 +10,7 @@ import { MdOutlineShoppingBag } from "react-icons/md";
 import styles from "./PCNavBar.module.css";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 import Image from "next/image";
+import DropDownWithSearchAndList from "../DropDownWithSearchAndList/DropDownWithSearchAndList";
 
 const PCNavBar = () => {
   const [active, setActive] = useState<string | null>(null);
@@ -55,7 +56,7 @@ const PCNavBar = () => {
         <Link href={"/"}>
           <h3 className="text-2xl  me-36">LOGO</h3>
         </Link>
-
+        <DropDownWithSearchAndList title={"Brands"}/>
         <div className="  w-[35%]">
           <PlaceholdersAndVanishInput placeholders={placeholders} onChange={handleChange} onSubmit={onSubmit} />
         </div>
@@ -135,113 +136,296 @@ const PCNavBar = () => {
             </Link>
             <MenuItem setActive={setActive} active={active} item="Sunglasses" href="/ssss">
               <div className="  text-sm grid grid-cols-3 gap-10 p-4">
+                {/* per item with image start */}
                 <div className="flex items-start gap-4">
                   <div>
-                    <Image
-                      src={"https://img.freepik.com/premium-photo/mens-sunglasses-no-background_943281-105141.jpg?w=740"}
-                      className="rounded-md"
-                      height={150}
-                      width={150}
-                      alt=""
-                    />
+                    <Link href={""}>
+                      <Image
+                        src={"https://img.freepik.com/premium-photo/mens-sunglasses-no-background_943281-105141.jpg?w=740"}
+                        className="rounded-md cursor-pointer"
+                        height={150}
+                        width={150}
+                        alt=""
+                      />
+                    </Link>
                   </div>
-                  <div className="flex flex-col gap-1">
-                    <h3 className={` hover:text-[#00a76b] text-xl font-bold relative group cursor-pointer`}>
-                      Men&apos;s Sunglasses
-                      <span className="absolute left-0 bottom-0 h-0.5 w-full bg-[#00a76b] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
-                    </h3>
-                    <p className={` hover:text-[#00a76b] w-min text-base font-medium relative group cursor-pointer`}>
-                    Casual
-                      <span className="absolute left-0 bottom-0 h-0.5 w-full bg-[#00a76b] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
-                    </p>
-                    <p className={` hover:text-[#00a76b] w-min text-base font-medium relative group cursor-pointer`}>
-                    Sports
-                      <span className="absolute left-0 bottom-0 h-0.5 w-full bg-[#00a76b] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
-                    </p>
-                    <p className={` hover:text-[#00a76b] w-min text-base font-medium relative group cursor-pointer`}>
-                    Luxury
-                      <span className="absolute left-0 bottom-0 h-0.5 w-full bg-[#00a76b] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
-                    </p>
+                  <div className="flex flex-col gap-1 whitespace-nowrap">
+                    <Link href={""}>
+                      <h3 className={` hover:text-[#00a76b] text-xl w-min font-bold relative group cursor-pointer`}>
+                        Men&apos;s Sunglasses
+                        <span className="absolute left-0 bottom-0 h-0.5 w-full bg-[#00a76b] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
+                      </h3>
+                    </Link>
+                    <Link href={""}>
+                      <p className={` hover:text-[#00a76b] w-min text-base font-medium relative group cursor-pointer`}>
+                        Casual
+                        <span className="absolute left-0 bottom-0 h-0.5 w-full bg-[#00a76b] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
+                      </p>
+                    </Link>
+                    <Link href={""}>
+                      <p className={` hover:text-[#00a76b] w-min text-base font-medium relative group cursor-pointer`}>
+                        Sports
+                        <span className="absolute left-0 bottom-0 h-0.5 w-full bg-[#00a76b] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
+                      </p>
+                    </Link>
+                    <Link href={""}>
+                      <p className={` hover:text-[#00a76b] w-min text-base font-medium relative group cursor-pointer`}>
+                        Luxury
+                        <span className="absolute left-0 bottom-0 h-0.5 w-full bg-[#00a76b] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
+                      </p>
+                    </Link>
                   </div>
                 </div>
+                {/* per item with image end */}
+                {/* per item with image start */}
+                <div className="flex items-start gap-4">
+                  <div className="h-36 w-36">
+                    <Link href={""} >
+                      <Image
+                        src={"https://img.freepik.com/premium-photo/woman-wearing-hat-sunglasses-is-posing-photo_1185498-16798.jpg?w=1380"}
+                        className="rounded-md cursor-pointer h-full w-full"
+                        height={150}
+                        width={150}
+                      
+                        alt=""
+                      />
+                    </Link>
+                  </div>
+                  <div className="flex flex-col gap-1 whitespace-nowrap">
+                    <Link href={""}>
+                      <h3 className={` hover:text-[#00a76b] text-xl w-min font-bold relative group cursor-pointer`}>
+                      Women&apos;s Sunglasses
+                        <span className="absolute left-0 bottom-0 h-0.5 w-full bg-[#00a76b] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
+                      </h3>
+                    </Link>
+                    <Link href={""}>
+                      <p className={` hover:text-[#00a76b] w-min text-base font-medium relative group cursor-pointer`}>
+                        Casual
+                        <span className="absolute left-0 bottom-0 h-0.5 w-full bg-[#00a76b] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
+                      </p>
+                    </Link>
+                    <Link href={""}>
+                      <p className={` hover:text-[#00a76b] w-min text-base font-medium relative group cursor-pointer`}>
+                        Sports
+                        <span className="absolute left-0 bottom-0 h-0.5 w-full bg-[#00a76b] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
+                      </p>
+                    </Link>
+                    <Link href={""}>
+                      <p className={` hover:text-[#00a76b] w-min text-base font-medium relative group cursor-pointer`}>
+                        Luxury
+                        <span className="absolute left-0 bottom-0 h-0.5 w-full bg-[#00a76b] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
+                      </p>
+                    </Link>
+                  </div>
+                </div>
+                {/* per item with image end */}
+                {/* per item with image start */}
+                <div className="flex items-start gap-4">
+                  <div>
+                    <Link href={""}>
+                      <Image
+                        src={"https://img.freepik.com/premium-psd/child-travel-style_510503-155.jpg?w=740"}
+                        className="rounded-md cursor-pointer"
+                        height={150}
+                        width={150}
+                        alt=""
+                      />
+                    </Link>
+                  </div>
+                  <div className="flex flex-col gap-1 whitespace-nowrap">
+                    <Link href={""}>
+                      <h3 className={` hover:text-[#00a76b] text-xl w-min font-bold relative group cursor-pointer`}>
+                      Kid&apos;s Sunglasses
+                        <span className="absolute left-0 bottom-0 h-0.5 w-full bg-[#00a76b] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
+                      </h3>
+                    </Link>
+                    <Link href={""}>
+                      <p className={` hover:text-[#00a76b] w-min text-base font-medium relative group cursor-pointer`}>
+                      Boys
+                        <span className="absolute left-0 bottom-0 h-0.5 w-full bg-[#00a76b] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
+                      </p>
+                    </Link>
+                    <Link href={""}>
+                      <p className={` hover:text-[#00a76b] w-min text-base font-medium relative group cursor-pointer`}>
+                      Girls
+                        <span className="absolute left-0 bottom-0 h-0.5 w-full bg-[#00a76b] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
+                      </p>
+                    </Link>
+                  
+                  </div>
+                </div>
+                {/* per item with image end */}              
                 <ProductItem
-                  title="Men's Sunglasses"
-                  href="/sunglasses/men"
-                  src="https://img.freepik.com/premium-photo/mens-sunglasses-no-background_943281-105141.jpg?w=740"
-                  description="Stylish sunglasses for men"
+                  title="Polarized Sunglasses"
+                  href=""
+                  src="https://img.freepik.com/premium-photo/product-photography-green-outdoor-sunglass_162944-3148.jpg?w=740"
+                  description="Reduce glare with polarized lenses"
                 />
                 <ProductItem
-                  title="Women"
-                  href="https://tailwindmasterkit.com"
-                  src="https://assets.aceternity.com/demos/tailwindmasterkit.webp"
-                  description="Production ready Tailwind css components for your next project"
-                />
-                <ProductItem
-                  title="Kids"
-                  href="https://gomoonbeam.com"
-                  src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
-                  description="Never write from scratch again. Go from idea to blog in minutes."
-                />
-                <ProductItem
-                  title="Kids"
-                  href="https://gomoonbeam.com"
-                  src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
-                  description="Never write from scratch again. Go from idea to blog in minutes."
-                />
-                <ProductItem
-                  title="Kids"
-                  href="https://gomoonbeam.com"
-                  src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
-                  description="Never write from scratch again. Go from idea to blog in minutes."
-                />
-                <ProductItem
-                  title="Kids"
-                  href="https://gomoonbeam.com"
-                  src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
-                  description="Never write from scratch again. Go from idea to blog in minutes."
-                />
-                <ProductItem
-                  title="Kids"
-                  href="https://gomoonbeam.com"
-                  src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
-                  description="Never write from scratch again. Go from idea to blog in minutes."
+                  title="Sports Sunglasses"
+                  href=""
+                  src="https://cdn.road.cc/sites/default/files/styles/main_width/public/oakley-sutro2.jpg"
+                  description="High-performance sports sunglasses"
                 />
               </div>
             </MenuItem>
-            <MenuItem setActive={setActive} active={active} item="Optical glass">
-              <div className="  text-sm grid grid-cols-2 gap-10 p-4">
+            <MenuItem setActive={setActive} active={active} item="Optical Glasses" href="/ssss">
+              <div className="  text-sm grid grid-cols-3 gap-10 p-4">
+                {/* per item with image start */}
+                <div className="flex items-start gap-4">
+                  <div>
+                    <Link href={""}>
+                      <Image
+                        src={"https://img.freepik.com/premium-photo/confident-young-man-with-stylish-eyeglasses-trendy-green-background_1153477-20408.jpg?w=740"}
+                        className="rounded-md cursor-pointer"
+                        height={150}
+                        width={150}
+                        alt=""
+                      />
+                    </Link>
+                  </div>
+                  <div className="flex flex-col gap-1 whitespace-nowrap">
+                    <Link href={""}>
+                      <h3 className={` hover:text-[#00a76b] text-xl w-min font-bold relative group cursor-pointer`}>
+                        Men&apos;s Optical Glasses
+                        <span className="absolute left-0 bottom-0 h-0.5 w-full bg-[#00a76b] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
+                      </h3>
+                    </Link>
+                    <Link href={""}>
+                      <p className={` hover:text-[#00a76b] w-min text-base font-medium relative group cursor-pointer`}>
+                        Casual
+                        <span className="absolute left-0 bottom-0 h-0.5 w-full bg-[#00a76b] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
+                      </p>
+                    </Link>
+                    <Link href={""}>
+                      <p className={` hover:text-[#00a76b] w-min text-base font-medium relative group cursor-pointer`}>
+                      Business
+                        <span className="absolute left-0 bottom-0 h-0.5 w-full bg-[#00a76b] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
+                      </p>
+                    </Link>
+                    <Link href={""}>
+                      <p className={` hover:text-[#00a76b] w-min text-base font-medium relative group cursor-pointer`}>
+                        Luxury
+                        <span className="absolute left-0 bottom-0 h-0.5 w-full bg-[#00a76b] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
+                      </p>
+                    </Link>
+                  </div>
+                </div>
+                {/* per item with image end */}
+                {/* per item with image start */}
+                <div className="flex items-start gap-4">
+                  <div className="h-36 w-36">
+                    <Link href={""} >
+                      <Image
+                        src={"https://img.freepik.com/premium-photo/blond-woman-wearing-glasses-hat-posing-picture-generative-ai_1034973-93773.jpg?w=740"}
+                        className="rounded-md cursor-pointer h-full w-full"
+                        height={150}
+                        width={150}
+                      
+                        alt=""
+                      />
+                    </Link>
+                  </div>
+                  <div className="flex flex-col gap-1 whitespace-nowrap">
+                    <Link href={""}>
+                      <h3 className={` hover:text-[#00a76b] text-xl w-min font-bold relative group cursor-pointer`}>
+                      Women&apos;s Optical Glasses
+                        <span className="absolute left-0 bottom-0 h-0.5 w-full bg-[#00a76b] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
+                      </h3>
+                    </Link>
+                    <Link href={""}>
+                      <p className={` hover:text-[#00a76b] w-min text-base font-medium relative group cursor-pointer`}>
+                        Casual
+                        <span className="absolute left-0 bottom-0 h-0.5 w-full bg-[#00a76b] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
+                      </p>
+                    </Link>
+                    <Link href={""}>
+                      <p className={` hover:text-[#00a76b] w-min text-base font-medium relative group cursor-pointer`}>
+                      Business
+                        <span className="absolute left-0 bottom-0 h-0.5 w-full bg-[#00a76b] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
+                      </p>
+                    </Link>
+                    <Link href={""}>
+                      <p className={` hover:text-[#00a76b] w-min text-base font-medium relative group cursor-pointer`}>
+                        Luxury
+                        <span className="absolute left-0 bottom-0 h-0.5 w-full bg-[#00a76b] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
+                      </p>
+                    </Link>
+                  </div>
+                </div>
+                {/* per item with image end */}
+                {/* per item with image start */}
+                <div className="flex items-start gap-4">
+                  <div>
+                    <Link href={""}>
+                      <Image
+                        src={"https://static.zennioptical.com/marketing/category/kids/4tile/4_tile_var_b_1/kids_tlc_4Tile_xs.png"}
+                        className="rounded-md cursor-pointer"
+                        height={150}
+                        width={150}
+                        alt=""
+                      />
+                    </Link>
+                  </div>
+                  <div className="flex flex-col gap-1 whitespace-nowrap">
+                    <Link href={""}>
+                      <h3 className={` hover:text-[#00a76b] text-xl w-min font-bold relative group cursor-pointer`}>
+                      Kid&apos;s Optical Glasses
+                        <span className="absolute left-0 bottom-0 h-0.5 w-full bg-[#00a76b] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
+                      </h3>
+                    </Link>
+                    <Link href={""}>
+                      <p className={` hover:text-[#00a76b] w-min text-base font-medium relative group cursor-pointer`}>
+                      Boys
+                        <span className="absolute left-0 bottom-0 h-0.5 w-full bg-[#00a76b] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
+                      </p>
+                    </Link>
+                    <Link href={""}>
+                      <p className={` hover:text-[#00a76b] w-min text-base font-medium relative group cursor-pointer`}>
+                      Girls
+                        <span className="absolute left-0 bottom-0 h-0.5 w-full bg-[#00a76b] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
+                      </p>
+                    </Link>
+                  
+                  </div>
+                </div>
+                {/* per item with image end */}              
                 <ProductItem
-                  title="Algochurn"
-                  href="https://algochurn.com"
-                  src="https://assets.aceternity.com/demos/algochurn.webp"
-                  description="Prepare for tech interviews like never before."
+                  title="Blue Light Blocking Glasses"
+                  href=""
+                  src="https://isightinfo.com/wp-content/uploads/2019/02/a-pair-of-blue-light-blocking-glasses-from-kelowna-optometrists-1920x1366.jpeg"
+                  description="Protect your eyes from blue light"
                 />
                 <ProductItem
-                  title="Tailwind Master Kit"
-                  href="https://tailwindmasterkit.com"
-                  src="https://assets.aceternity.com/demos/tailwindmasterkit.webp"
-                  description="Production ready Tailwind css components for your next project"
+                  title="Photochromic Lenses"
+                  href=""
+                  src="https://i.ebayimg.com/images/g/VkEAAOSwW-xjdlTA/s-l1200.webp"
+                  description="Adaptive photochromic lenses"
                 />
                 <ProductItem
-                  title="Moonbeam"
-                  href="https://gomoonbeam.com"
-                  src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
-                  description="Never write from scratch again. Go from idea to blog in minutes."
+                  title="Anti-Reflective Coating"
+                  href=""
+                  src="https://da4e1j5r7gw87.cloudfront.net/wp-content/uploads/sites/4460/2023/06/Glasses-On-The-Road.jpg"
+                  description="Reduce glare with anti-reflective lenses"
                 />
                 <ProductItem
-                  title="Rogue"
-                  href="https://userogue.com"
-                  src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.47.07%E2%80%AFPM.png"
-                  description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
+                  title="Computer Glasses"
+                  href=""
+                  src="https://www.cnet.com/a/img/toFeyyNRJ23GqHaZQFM-kfTJRYc/u003d/940x0/2020/07/17/e1c89e0d-6662-4bbc-b564-14a0b63544a4/blueease.jpg"
+                  description="Glasses for computer use"
                 />
               </div>
             </MenuItem>
-            <MenuItem setActive={setActive} active={active} item="Pricing">
-              <div className="flex flex-col space-y-4 text-sm">
-                <HoveredLink href="/hobby">Hobby</HoveredLink>
-                <HoveredLink href="/individual">Individual</HoveredLink>
-                <HoveredLink href="/team">Team</HoveredLink>
-                <HoveredLink href="/enterprise">Enterprise</HoveredLink>
+         
+            <MenuItem setActive={setActive} active={active} item="Brands">
+              <div className="flex flex-col space-y-4 text-sm py-2 ps-2 pe-6">
+                <HoveredLink href="">Ray-Ban</HoveredLink>
+                <HoveredLink href="">Oakley</HoveredLink>
+                <HoveredLink href="">Gucci</HoveredLink>
+                <HoveredLink href="">Prada</HoveredLink>
+                <HoveredLink href="">Versace</HoveredLink>
+                <HoveredLink href="">Armani</HoveredLink>
+                <HoveredLink href="">Dior</HoveredLink>
               </div>
             </MenuItem>
           </Menu>

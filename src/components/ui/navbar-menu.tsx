@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 const transition = {
   type: "spring",
@@ -19,12 +20,14 @@ export const MenuItem = ({
   item,
   children,
   href,
+  className,
 }: {
   setActive: (item: string) => void;
   active: string | null;
   item: string;
   children?: React.ReactNode;
   href?: string;
+  className?: string;
 }) => {
   return (
     <div onMouseEnter={() => setActive(item)} className="relative ">
@@ -46,7 +49,7 @@ export const MenuItem = ({
       {active !== null && (
         <motion.div initial={{ opacity: 0, scale: 0.85, y: 10 }} animate={{ opacity: 1, scale: 1, y: 0 }} transition={transition}>
           {active === item && (
-            <div className="absolute top-[calc(100%_+_1rem)] left-1/2 transform -translate-x-1/2 pt-4">
+            <div className={cn("absolute top-[calc(100%_+_1rem)] left-1/2 transform -translate-x-1/2 pt-4", className)}>
               <motion.div
                 transition={transition}
                 layoutId="active" // layoutId ensures smooth animation
@@ -54,7 +57,7 @@ export const MenuItem = ({
               >
                 <motion.div
                   layout // layout ensures smooth animation
-                  className="w-max h-full p-4"
+                  className="w-max h-full p-"
                 >
                   {children}
                 </motion.div>
@@ -67,11 +70,11 @@ export const MenuItem = ({
   );
 };
 
-export const Menu = ({ setActive, children }: { setActive: (item: string | null) => void; children: React.ReactNode }) => {
+export const Menu = ({ setActive, children, className }: { setActive: (item: string | null) => void; children: React.ReactNode, className?:string }) => {
   return (
     <nav
       onMouseLeave={() => setActive(null)} // resets the state
-      className="relative border-transparent dark:bg-transparent dark:border-white/[0.2]  flex justify-center space-x-4 px-8 py-6 z-50"
+      className={cn("relative border-transparent dark:bg-transparent dark:border-white/[0.2]  flex justify-center space-x-4 px-8 py-6 z-40", className)}
     >
       {children}
     </nav>
