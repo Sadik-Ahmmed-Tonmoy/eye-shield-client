@@ -16,12 +16,34 @@ const PCNavBar = () => {
 
   // search bar start
   const placeholders = [
-    "What's the first rule of Fight Club?",
-    "Who is Tyler Durden?",
-    "Where is Andrew Laeddis Hiding?",
-    "Write a Javascript method to reverse a string",
-    "How to assemble your own PC?",
+    "polarized sunglasses",
+    "UV protection glasses",
+    "blue light blocking glasses",
+    "aviator sunglasses",
+    "sports sunglasses",
+    "prescription sunglasses",
+    "designer sunglasses",
+    "mirrored sunglasses",
+    "round frame sunglasses",
+    "retro style sunglasses",
+    "wayfarer sunglasses",
+    "oversized sunglasses",
+    "kids sunglasses",
+    "foldable sunglasses",
+    "photochromic lenses",
+    "gradient lenses",
+    "cat eye sunglasses",
+    "square frame sunglasses",
+    "vintage sunglasses",
+    "bamboo frame sunglasses"
   ];
+  
+
+
+
+
+
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     console.log(e.target.value);

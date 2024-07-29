@@ -7,7 +7,7 @@ import ShowSideMenuController from "./ShowSideMenuController";
 const AddToCartCard = ({ id }: { id: string }) => {
   const fakeColorCount = ["bg-black", "bg-blue-500", "bg-green-500", "bg-yellow-500", "bg-purple-500"];
   return (
-    <FollowerPointerCard>
+    // <FollowerPointerCard>
       <ShowSideMenuController>
         <div style={{ boxShadow: "0px 2px 6px 2px rgba(12, 107, 144, 0.10)" }} className="bg-white text-black rounded-2xl  max-w-[350px]">
           <div className="">
@@ -45,7 +45,7 @@ const AddToCartCard = ({ id }: { id: string }) => {
           </div>
         </div>
       </ShowSideMenuController>
-    </FollowerPointerCard>
+    // </FollowerPointerCard>
   );
 };
 
