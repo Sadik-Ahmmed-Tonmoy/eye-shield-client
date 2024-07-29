@@ -3,7 +3,7 @@ import PCNavBar from './PCNavBar/PCNavBar';
 
 const Navbar = () => {
   return (
-    <div>
+    <div className='relative'>
       <PCNavBar/>
     </div>
   );

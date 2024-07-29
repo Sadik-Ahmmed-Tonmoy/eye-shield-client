@@ -8,6 +8,7 @@ import { BsPerson } from "react-icons/bs";
 
 import { MdOutlineShoppingBag } from "react-icons/md";
 import styles from "./PCNavBar.module.css";
+import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 
 const PCNavBar = () => {
   const [active, setActive] = useState<string | null>(null);
@@ -32,7 +33,7 @@ const PCNavBar = () => {
   // search bar end
 
   return (
-    <div className="w-full sticky top-0 z-50 bg-white">
+    <div className={`${styles.navbar} w-full dark:bg-black`}>
       {/* first row start */}
       <div className=" w-full container mx-auto flex justify-between items-center">
         <Link href={"/"}>
@@ -108,13 +109,6 @@ const PCNavBar = () => {
             </div>
           </MenuItem>
         </Menu>
-        {/* <div className="flex items-center gap-3">
-            <p>login</p>
-            <p>login</p>
-            <p>login</p>
-            <ThemeSwitcher />
-          </div> */}
-
         <div className=" flex items-center gap-5 text-xs whitespace-nowrap">
           <button className={`${styles.accountButton} ${styles.textHoverEffect}`}>
             <BsPerson className="w-6 h-6" />
@@ -146,6 +140,8 @@ const PCNavBar = () => {
               0
             </p>
           </button>
+
+          <ThemeSwitcher />
 
           {/* cart floating button start */}
           {/* <div onClick={() => setOpen(true)}

@@ -2,8 +2,9 @@
 "use client";
 
 import { Switch } from "@nextui-org/react";
-import {useTheme} from "next-themes";
+import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import { IoMoonOutline, IoSunnyOutline } from "react-icons/io5";
 
 export function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false)
@@ -17,11 +18,13 @@ export function ThemeSwitcher() {
 
   return (
     <div>
+      {theme === "dark" ? <IoSunnyOutline size={25} onClick={() => setTheme("light")} className="cursor-pointer"/>  : <IoMoonOutline size={20} onClick={() => setTheme("dark")} className="cursor-pointer"/>}
 
 
-      <Switch isSelected={theme === "dark" ? true : false}
+
+      {/* <Switch isSelected={theme === "dark" ? true : false}
       onValueChange={(e) => setTheme(theme === "dark" ? "light" : "dark")}
-      />
+      /> */}
     </div>
   )
 };

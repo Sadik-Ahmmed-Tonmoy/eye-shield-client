@@ -12,7 +12,7 @@ const commonLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <Navbar />
-      <div className="px-2">
+      <div className="px-2 mt-36">
       {children}
       </div>
       <Footer />
