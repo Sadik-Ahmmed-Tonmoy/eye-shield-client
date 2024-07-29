@@ -34,6 +34,7 @@ const config: Config = {
         hoverFade: 'hoverFade 0.5s ease-in-out',
         hoverSlide: 'hoverSlide 0.5s ease-in-out',
         hoverBounce: 'hoverBounce 0.5s ease-in-out',
+        barExpand: 'barExpand 0.5s ease-in-out',
       },
       keyframes: {
         fadeIn: {
@@ -59,6 +60,10 @@ const config: Config = {
         hoverBounce: {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-5px)' },
+        },
+        barExpand: {
+          '0%': { width: '0%' },
+          '100%': { width: '100%' },
         },
       },
     },

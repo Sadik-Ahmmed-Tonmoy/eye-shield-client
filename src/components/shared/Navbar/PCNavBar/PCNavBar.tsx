@@ -36,15 +36,8 @@ const PCNavBar = () => {
     "cat eye sunglasses",
     "square frame sunglasses",
     "vintage sunglasses",
-    "bamboo frame sunglasses"
+    "bamboo frame sunglasses",
   ];
-  
-
-
-
-
-
-
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     console.log(e.target.value);
@@ -62,21 +55,21 @@ const PCNavBar = () => {
         <Link href={"/"}>
           <h3 className="text-2xl  me-36">LOGO</h3>
         </Link>
-      
+
         <div className="  w-[35%]">
-            <PlaceholdersAndVanishInput placeholders={placeholders} onChange={handleChange} onSubmit={onSubmit} />
-          </div>
+          <PlaceholdersAndVanishInput placeholders={placeholders} onChange={handleChange} onSubmit={onSubmit} />
+        </div>
 
         <div className=" flex items-center gap-5 text-xs whitespace-nowrap">
-        <Link href={"/login"}>
-        <button className={`${styles.accountButton} ${styles.textHoverEffect}`}>
-            <BsPerson className="w-6 h-6" />
+          <Link href={"/login"}>
+            <button className={`${styles.accountButton} ${styles.textHoverEffect}`}>
+              <BsPerson className="w-6 h-6" />
 
-            <span className="relative">
-              Account
-              <span className={styles.text}>Account</span>
-            </span>
-          </button>
+              <span className="relative">
+                Account
+                <span className={styles.text}>Account</span>
+              </span>
+            </button>
           </Link>
 
           <button className={`${styles.accountButton} ${styles.textHoverEffect}`}>
@@ -131,106 +124,127 @@ const PCNavBar = () => {
       {/* second row start */}
       <div className="border-y-1">
         <div className="w-full container mx-auto flex justify-center items-center">
-
-        <Menu setActive={setActive}>
-          <Link  href={"/"}><p onMouseEnter={()=> setActive(null)}>Home</p></Link>
-          <MenuItem setActive={setActive} active={active} item="Sunglasses" href="/ssss">
-            <div className="  text-sm grid grid-cols-3 gap-10 p-4">
-              <div className="flex items-start gap-4">
-                <div>
-                  <Image src={"https://img.freepik.com/premium-photo/mens-sunglasses-no-background_943281-105141.jpg?w=740"} className="rounded-md" height={150} width={150} alt=""/>
+          <Menu setActive={setActive}>
+            <Link href={"/"}>
+              <p onMouseEnter={() => setActive("Home")}>
+                <span className={`${active === "Home" ? "text-[#00a76b]" : ""} relative group`}>
+                  Home
+                  <span className="absolute left-0 -bottom-5 h-0.5 w-full bg-[#00a76b] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
+                </span>
+              </p>
+            </Link>
+            <MenuItem setActive={setActive} active={active} item="Sunglasses" href="/ssss">
+              <div className="  text-sm grid grid-cols-3 gap-10 p-4">
+                <div className="flex items-start gap-4">
+                  <div>
+                    <Image
+                      src={"https://img.freepik.com/premium-photo/mens-sunglasses-no-background_943281-105141.jpg?w=740"}
+                      className="rounded-md"
+                      height={150}
+                      width={150}
+                      alt=""
+                    />
+                  </div>
+                  <div className="flex flex-col gap-1">
+                    <h3 className={` hover:text-[#00a76b] text-xl font-bold relative group cursor-pointer`}>
+                      Men&apos;s Sunglasses
+                      <span className="absolute left-0 bottom-0 h-0.5 w-full bg-[#00a76b] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
+                    </h3>
+                    <p className={` hover:text-[#00a76b] w-min text-base font-medium relative group cursor-pointer`}>
+                    Casual
+                      <span className="absolute left-0 bottom-0 h-0.5 w-full bg-[#00a76b] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
+                    </p>
+                    <p className={` hover:text-[#00a76b] w-min text-base font-medium relative group cursor-pointer`}>
+                    Sports
+                      <span className="absolute left-0 bottom-0 h-0.5 w-full bg-[#00a76b] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
+                    </p>
+                    <p className={` hover:text-[#00a76b] w-min text-base font-medium relative group cursor-pointer`}>
+                    Luxury
+                      <span className="absolute left-0 bottom-0 h-0.5 w-full bg-[#00a76b] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
+                    </p>
+                  </div>
                 </div>
-                <div className="flex flex-col gap-1">
-                  <h5 className="text-xl font-bold">Men&apos;s Sunglasses</h5>
-                  <p className="text-base font-medium">Casual</p>
-                  <p className="text-base font-medium">Sports</p>
-                  <p className="text-base font-medium">Luxury</p>
-                </div>
+                <ProductItem
+                  title="Men's Sunglasses"
+                  href="/sunglasses/men"
+                  src="https://img.freepik.com/premium-photo/mens-sunglasses-no-background_943281-105141.jpg?w=740"
+                  description="Stylish sunglasses for men"
+                />
+                <ProductItem
+                  title="Women"
+                  href="https://tailwindmasterkit.com"
+                  src="https://assets.aceternity.com/demos/tailwindmasterkit.webp"
+                  description="Production ready Tailwind css components for your next project"
+                />
+                <ProductItem
+                  title="Kids"
+                  href="https://gomoonbeam.com"
+                  src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
+                  description="Never write from scratch again. Go from idea to blog in minutes."
+                />
+                <ProductItem
+                  title="Kids"
+                  href="https://gomoonbeam.com"
+                  src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
+                  description="Never write from scratch again. Go from idea to blog in minutes."
+                />
+                <ProductItem
+                  title="Kids"
+                  href="https://gomoonbeam.com"
+                  src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
+                  description="Never write from scratch again. Go from idea to blog in minutes."
+                />
+                <ProductItem
+                  title="Kids"
+                  href="https://gomoonbeam.com"
+                  src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
+                  description="Never write from scratch again. Go from idea to blog in minutes."
+                />
+                <ProductItem
+                  title="Kids"
+                  href="https://gomoonbeam.com"
+                  src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
+                  description="Never write from scratch again. Go from idea to blog in minutes."
+                />
               </div>
-              <ProductItem
-                title="Men's Sunglasses"
-                href="/sunglasses/men"
-                src="https://img.freepik.com/premium-photo/mens-sunglasses-no-background_943281-105141.jpg?w=740"
-                description="Stylish sunglasses for men"
-              />
-              <ProductItem
-                title="Women"
-                href="https://tailwindmasterkit.com"
-                src="https://assets.aceternity.com/demos/tailwindmasterkit.webp"
-                description="Production ready Tailwind css components for your next project"
-              />
-              <ProductItem
-                title="Kids"
-                href="https://gomoonbeam.com"
-                src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
-                description="Never write from scratch again. Go from idea to blog in minutes."
-              />
-              <ProductItem
-                title="Kids"
-                href="https://gomoonbeam.com"
-                src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
-                description="Never write from scratch again. Go from idea to blog in minutes."
-              />
-              <ProductItem
-                title="Kids"
-                href="https://gomoonbeam.com"
-                src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
-                description="Never write from scratch again. Go from idea to blog in minutes."
-              />
-              <ProductItem
-                title="Kids"
-                href="https://gomoonbeam.com"
-                src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
-                description="Never write from scratch again. Go from idea to blog in minutes."
-              />
-              <ProductItem
-                title="Kids"
-                href="https://gomoonbeam.com"
-                src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
-                description="Never write from scratch again. Go from idea to blog in minutes."
-              />
-         
-            </div>
-          </MenuItem>
-          <MenuItem setActive={setActive} active={active} item="Optical glass">
-            <div className="  text-sm grid grid-cols-2 gap-10 p-4">
-              <ProductItem
-                title="Algochurn"
-                href="https://algochurn.com"
-                src="https://assets.aceternity.com/demos/algochurn.webp"
-                description="Prepare for tech interviews like never before."
-              />
-              <ProductItem
-                title="Tailwind Master Kit"
-                href="https://tailwindmasterkit.com"
-                src="https://assets.aceternity.com/demos/tailwindmasterkit.webp"
-                description="Production ready Tailwind css components for your next project"
-              />
-              <ProductItem
-                title="Moonbeam"
-                href="https://gomoonbeam.com"
-                src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
-                description="Never write from scratch again. Go from idea to blog in minutes."
-              />
-              <ProductItem
-                title="Rogue"
-                href="https://userogue.com"
-                src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.47.07%E2%80%AFPM.png"
-                description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
-              />
-            </div>
-          </MenuItem>
-          <MenuItem setActive={setActive} active={active} item="Pricing">
-            <div className="flex flex-col space-y-4 text-sm">
-              <HoveredLink href="/hobby">Hobby</HoveredLink>
-              <HoveredLink href="/individual">Individual</HoveredLink>
-              <HoveredLink href="/team">Team</HoveredLink>
-              <HoveredLink href="/enterprise">Enterprise</HoveredLink>
-            </div>
-          </MenuItem>
-        </Menu>
-
-        
+            </MenuItem>
+            <MenuItem setActive={setActive} active={active} item="Optical glass">
+              <div className="  text-sm grid grid-cols-2 gap-10 p-4">
+                <ProductItem
+                  title="Algochurn"
+                  href="https://algochurn.com"
+                  src="https://assets.aceternity.com/demos/algochurn.webp"
+                  description="Prepare for tech interviews like never before."
+                />
+                <ProductItem
+                  title="Tailwind Master Kit"
+                  href="https://tailwindmasterkit.com"
+                  src="https://assets.aceternity.com/demos/tailwindmasterkit.webp"
+                  description="Production ready Tailwind css components for your next project"
+                />
+                <ProductItem
+                  title="Moonbeam"
+                  href="https://gomoonbeam.com"
+                  src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
+                  description="Never write from scratch again. Go from idea to blog in minutes."
+                />
+                <ProductItem
+                  title="Rogue"
+                  href="https://userogue.com"
+                  src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.47.07%E2%80%AFPM.png"
+                  description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
+                />
+              </div>
+            </MenuItem>
+            <MenuItem setActive={setActive} active={active} item="Pricing">
+              <div className="flex flex-col space-y-4 text-sm">
+                <HoveredLink href="/hobby">Hobby</HoveredLink>
+                <HoveredLink href="/individual">Individual</HoveredLink>
+                <HoveredLink href="/team">Team</HoveredLink>
+                <HoveredLink href="/enterprise">Enterprise</HoveredLink>
+              </div>
+            </MenuItem>
+          </Menu>
         </div>
       </div>
       {/* second row end*/}
