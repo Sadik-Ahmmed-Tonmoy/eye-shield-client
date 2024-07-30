@@ -341,7 +341,7 @@ const DropDownMenus = () => {
     subMenu: SubMenu[];
   }
   
-  const fakeData : Menu[] = [
+  const fakeData : any = [
     {
       imageUrl: "https://example.com/images/sunglasses.jpg",
       menu: "Sunglasses",
