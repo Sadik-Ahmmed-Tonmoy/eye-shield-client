@@ -40,6 +40,8 @@
     animation: waterFloat 1s infinite;
   }
   
+
+  
   @keyframes waterFloat {
     0% {
       text-shadow: 0 0 0 #00a76b;

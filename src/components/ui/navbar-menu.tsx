@@ -34,13 +34,13 @@ export const MenuItem = ({
       <motion.p transition={{ duration: 0.3 }} className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white">
         {href ? (
           <Link href={href}>
-            <span className={`${active === item ? "text-[#00a76b]" : ""} relative group`}>
+            <span className={`${active === item ? "text-[#00a76b]" : ""} relative group font-medium`}>
               {item}
               <span className="absolute left-0 -bottom-5 h-0.5 w-full bg-[#00a76b] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
             </span>
           </Link>
         ) : (
-          <span className={`${active === item ? "text-[#00a76b]" : ""} relative group`}>
+          <span className={`${active === item ? "text-[#00a76b]" : ""} relative group font-medium`}>
             {item}
             <span className="absolute left-0 -bottom-5 h-0.5 w-full bg-[#00a76b] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
           </span>
@@ -95,9 +95,12 @@ export const Menu = ({
 export const ProductItem = ({ title, description, href, src }: { title: string; description: string; href: string; src: string }) => {
   return (
     <Link href={href} className="flex space-x-2">
-      <Image src={src} width={140} height={70} alt={title} className="flex-shrink-0 rounded-md shadow-2xl" />
+      <Image src={src} width={150} height={150} alt={title} className="flex-shrink-0 rounded-md shadow-2xl" />
       <div>
-        <h4 className="text-xl font-bold mb-1 text-black dark:text-white">{title}</h4>
+        <h4 className="text-xl whitespace-nowrap mb-1 text-black dark:text-white hover:text-[#00a76b] w-min  font-bold relative group cursor-pointer">
+          {title}
+          <span className="absolute left-0 bottom-0 h-0.5 w-full bg-[#00a76b] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
+        </h4>
         <p className="text-neutral-700 text-sm max-w-[10rem] dark:text-neutral-300">{description}</p>
       </div>
     </Link>
