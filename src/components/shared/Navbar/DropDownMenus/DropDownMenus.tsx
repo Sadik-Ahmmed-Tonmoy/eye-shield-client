@@ -322,26 +322,24 @@ const DropDownMenus = () => {
     "Z",
   ];
 
-
-
   interface ChildMenu {
     chieldMenuTitle: string;
   }
-  
+
   interface SubMenu {
     subMenuTitle: string;
     imageUrl: string;
-    chieldMenu?: ChildMenu[];
-    descriptions?: string | undefined; // Optional field
+    chieldMenu: ChildMenu[] ;
+    descriptions: string; // Optional field
   }
-  
+
   interface Menu {
     imageUrl: string;
     menu: string;
     subMenu: SubMenu[];
   }
-  
-  const fakeData : any = [
+
+  const fakeData: Menu[] = [
     {
       imageUrl: "https://example.com/images/sunglasses.jpg",
       menu: "Sunglasses",
@@ -351,6 +349,7 @@ const DropDownMenus = () => {
           imageUrl:
             "https://img.freepik.com/premium-photo/confident-young-man-with-stylish-eyeglasses-trendy-green-background_1153477-20408.jpg?w=740",
           chieldMenu: [{ chieldMenuTitle: "Casual" }, { chieldMenuTitle: "Sports" }, { chieldMenuTitle: "Luxury" }, { chieldMenuTitle: "Polarized" }],
+             descriptions:""
         },
         {
           subMenuTitle: "Women's Sunglasses",
@@ -361,11 +360,13 @@ const DropDownMenus = () => {
             { chieldMenuTitle: "Fashion" },
             { chieldMenuTitle: "Oversized" },
           ],
+             descriptions:""
         },
         {
           subMenuTitle: "Kids' Sunglasses",
           imageUrl: "https://img.freepik.com/premium-psd/child-travel-style_510503-155.jpg?w=740",
           chieldMenu: [{ chieldMenuTitle: "Boys" }, { chieldMenuTitle: "Girls" }, { chieldMenuTitle: "Trendy" }, { chieldMenuTitle: "Protective" }],
+             descriptions:""
         },
         {
           subMenuTitle: "Polarized Sunglasses",
@@ -376,6 +377,7 @@ const DropDownMenus = () => {
             { chieldMenuTitle: "Sport Polarized" },
             { chieldMenuTitle: "Stylish Polarized" },
           ],
+             descriptions:""
         },
         {
           subMenuTitle: "Aviator Sunglasses",
@@ -386,6 +388,7 @@ const DropDownMenus = () => {
             { chieldMenuTitle: "Metal Aviator" },
             { chieldMenuTitle: "Colored Aviator" },
           ],
+             descriptions:""
         },
       ],
     },
@@ -398,6 +401,7 @@ const DropDownMenus = () => {
           imageUrl:
             "https://img.freepik.com/premium-photo/confident-young-man-with-stylish-eyeglasses-trendy-green-background_1153477-20408.jpg?w=740",
           chieldMenu: [{ chieldMenuTitle: "Business" }, { chieldMenuTitle: "Casual" }, { chieldMenuTitle: "Fashion" }, { chieldMenuTitle: "Luxury" }],
+          descriptions:""
         },
         {
           subMenuTitle: "Women's Optical Glasses",
@@ -408,11 +412,13 @@ const DropDownMenus = () => {
             { chieldMenuTitle: "Luxury" },
             { chieldMenuTitle: "Trendy" },
           ],
+          descriptions:""
         },
         {
           subMenuTitle: "Kids' Optical Glasses",
           imageUrl: "https://static.zennioptical.com/marketing/category/kids/4tile/4_tile_var_b_1/kids_tlc_4Tile_xs.png",
           chieldMenu: [{ chieldMenuTitle: "Boys" }, { chieldMenuTitle: "Girls" }, { chieldMenuTitle: "Durable" }, { chieldMenuTitle: "Colorful" }],
+             descriptions:""
         },
         {
           subMenuTitle: "Blue Light Blocking Glasses",
@@ -424,6 +430,7 @@ const DropDownMenus = () => {
             { chieldMenuTitle: "Stylish Blue Light" },
             { chieldMenuTitle: "Professional Blue Light" },
           ],
+             descriptions:""
         },
         {
           subMenuTitle: "Progressive Lenses",
@@ -434,57 +441,91 @@ const DropDownMenus = () => {
             { chieldMenuTitle: "Bifocal" },
             { chieldMenuTitle: "Photochromic" },
           ],
+             descriptions:""
         },
       ],
     },
     {
       imageUrl: "https://example.com/images/blog.jpg",
       menu: "Blog",
-      subMenu:  [
+      subMenu: [
         {
           subMenuTitle: "Sunglasses Trends",
           imageUrl: "https://www.shopz.com.bd/wp-content/uploads/2022/01/Emosnia-Small-Rectangle-Sunglasses-Men-Women.jpg",
-          descriptions: "Discover the latest trends in sunglasses fashion for the current year."
+          descriptions: "Discover the latest trends in sunglasses fashion for the current year.",
+          chieldMenu: [
+            { chieldMenuTitle: "" },
+          ],
+          
         },
         {
           subMenuTitle: "Optical Glasses Care",
           imageUrl: "https://raha.com.bd/public/uploads/all/5BmKMNduyhHOsQvZISiWnKXM9LycMWyS0B9eME7a.jpg",
-          descriptions: "Learn how to take care of your optical glasses to keep them in top condition."
+          descriptions: "Learn how to take care of your optical glasses to keep them in top condition.",
+          chieldMenu: [
+            { chieldMenuTitle: "" },
+          ],
         },
         {
           subMenuTitle: "Health & Vision",
           imageUrl: "https://eoms.cutpricebd.com/oms_products/big/164182003637874_27417.png",
-          descriptions: "Tips and advice on maintaining healthy vision and eye care."
+          descriptions: "Tips and advice on maintaining healthy vision and eye care.",
+          chieldMenu: [
+            { chieldMenuTitle: "" },
+          ],
         },
         {
           subMenuTitle: "Brand Spotlights",
-          imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREvUxGf1C6Z4xXkvxG0lqvgvdTNvf0R17OvBccRwUSTLHwQyd7QQYGNGnxxpSCAN09vOI&usqp=CAU",
-          descriptions: "Highlighting the top eyewear brands and their latest collections."
+          imageUrl:
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREvUxGf1C6Z4xXkvxG0lqvgvdTNvf0R17OvBccRwUSTLHwQyd7QQYGNGnxxpSCAN09vOI&usqp=CAU",
+          descriptions: "Highlighting the top eyewear brands and their latest collections.",
+          chieldMenu: [
+            { chieldMenuTitle: "" },
+          ],
         },
         {
           subMenuTitle: "Customer Stories",
-          imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvVM_ki9-mvQORnvC7qApj188IWzvrPkHtpGFakcAbSWZKbsYllOtOX21AxIY8c55UMu0&usqp=CAU",
-          descriptions: "Read about the experiences and stories from our satisfied customers."
+          imageUrl:
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvVM_ki9-mvQORnvC7qApj188IWzvrPkHtpGFakcAbSWZKbsYllOtOX21AxIY8c55UMu0&usqp=CAU",
+          descriptions: "Read about the experiences and stories from our satisfied customers.",
+          chieldMenu: [
+            { chieldMenuTitle: "" },
+          ],
         },
         {
           subMenuTitle: "Tech Insights",
-          imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0a6mQf-lrLXZljIPZBbCqi6dYwf1ehST0760WLlzbu6RRKyPHtb-Wb4ddxHLjbIQew-0&usqp=CAU",
-          descriptions: "Stay updated with the latest technological advancements in eyewear."
+          imageUrl:
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0a6mQf-lrLXZljIPZBbCqi6dYwf1ehST0760WLlzbu6RRKyPHtb-Wb4ddxHLjbIQew-0&usqp=CAU",
+          descriptions: "Stay updated with the latest technological advancements in eyewear.",
+          chieldMenu: [
+            { chieldMenuTitle: "" },
+          ],
         },
         {
           subMenuTitle: "Seasonal Picks",
           imageUrl: "https://static-01.daraz.com.bd/p/f612727fc1eb2297d46c27ad371cf08a.jpg_750x750.jpg_.webp",
-          descriptions: "Find the best eyewear picks for the current season."
+          descriptions: "Find the best eyewear picks for the current season.",
+          chieldMenu: [
+            { chieldMenuTitle: "" },
+          ],
         },
         {
           subMenuTitle: "Travel Essentials",
-          imageUrl: "https://img.kwcdn.com/product/Fancyalgo/VirtualModelMatting/33eed6d37daf73ed84b0549f7238426d.jpg?imageMogr2/auto-orient%7CimageView2/2/w/800/q/70/format/webp",
-          descriptions: "Must-have eyewear for travelers, ensuring comfort and protection."
+          imageUrl:
+            "https://img.kwcdn.com/product/Fancyalgo/VirtualModelMatting/33eed6d37daf73ed84b0549f7238426d.jpg?imageMogr2/auto-orient%7CimageView2/2/w/800/q/70/format/webp",
+          descriptions: "Must-have eyewear for travelers, ensuring comfort and protection.",
+            chieldMenu: [
+                { chieldMenuTitle: "" },
+            ],
         },
         {
           subMenuTitle: "Style Guides",
-          imageUrl: "https://www.jiomart.com/images/product/original/rvzeicz9k1/campeon-uv-400-protection-avaitor-black-frame-green-glass-sunglasses-for-men-and-women-pack-of-1-product-images-rvzeicz9k1-6-202202062353.jpg?im=Resize=(500,630)",
-          descriptions: "Comprehensive guides to help you choose the right style of eyewear."
+          imageUrl:
+            "https://www.jiomart.com/images/product/original/rvzeicz9k1/campeon-uv-400-protection-avaitor-black-frame-green-glass-sunglasses-for-men-and-women-pack-of-1-product-images-rvzeicz9k1-6-202202062353.jpg?im=Resize=(500,630)",
+          descriptions: "Comprehensive guides to help you choose the right style of eyewear.",
+            chieldMenu: [
+                { chieldMenuTitle: "" },
+            ],
         },
       ],
     },
@@ -695,13 +736,7 @@ const DropDownMenus = () => {
               <div key={index} className="flex items-start gap-4">
                 <div className="h-14 w-14">
                   <Link href={""}>
-                    <Image
-                      src={item.imageUrl}
-                      className="rounded-md cursor-pointer h-full w-full"
-                      height={150}
-                      width={150}
-                      alt=""
-                    />
+                    <Image src={item.imageUrl} className="rounded-md cursor-pointer h-full w-full" height={150} width={150} alt="" />
                   </Link>
                 </div>
                 <div className="flex flex-col gap-1 max-w-[140px]">
@@ -710,14 +745,11 @@ const DropDownMenus = () => {
                       {item.subMenuTitle.length > 20 ? item.subMenuTitle.substring(0, 20) + "..." : item.subMenuTitle}
                       <span className="absolute left-0 bottom-0 h-0.5 w-full bg-[#00a76b] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
                     </h3>
-                    <p className="">
-                        {item?.descriptions.length > 30 ? item?.descriptions.substring(0, 30) + "..." : item.descriptions}
-                    </p>
+                    <p className="">{item?.descriptions.length > 30 ? item?.descriptions.substring(0, 30) + "..." : item.descriptions}</p>
                   </Link>
                 </div>
               </div>
             ))}
-         
           </div>
         </MenuItem>
       </Menu>
