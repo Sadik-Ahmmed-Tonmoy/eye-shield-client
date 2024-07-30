@@ -1,71 +1,89 @@
 /* components/MobileDropDown.module.css */
-.dropdown {
-  width: 100%;
-  background-color: #333;
-  color: #fff;
-}
-
-.menu {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.container {
+  display: flex;
+  flex-direction: column;
 }
 
 .menuItem {
-  position: relative;
-  border-bottom: 1px solid #444;
-}
-
-.menuLink {
-  display: block;
-  padding: 1rem;
-  color: #fff;
-  text-decoration: none;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
 }
 
 .menuHeader {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.arrow {
-  font-size: 1rem;
+.menuHeader:hover {
+  background-color: #f0f0f0;
 }
 
-.subMenu {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  background-color: #444;
+.menuTitle {
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #000;
+}
+
+.subMenuContainer {
+  padding-left: 10px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
 }
 
 .subMenuItem {
-  border-bottom: 1px solid #555;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
 }
 
-.subMenuLink {
-  display: block;
-  padding: 1rem;
-  color: #fff;
+.subMenuHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.subMenuHeader:hover {
+  background-color: #f0f0f0;
+}
+
+.subMenuTitle {
+  font-size: 14px;
+  font-weight: bold;
   text-decoration: none;
+  color: #000;
 }
 
-.childMenu {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  background-color: #555;
+.childMenuContainer {
+  margin-left: 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
 }
 
 .childMenuItem {
-  border-bottom: 1px solid #666;
+  display: block;
+  padding: 5px 0;
+  color: #0070f3;
+  text-decoration: none;
 }
 
-.childMenuLink {
-  display: block;
-  padding: 1rem;
-  color: #fff;
-  text-decoration: none;
+.childMenuItem:hover {
+  text-decoration: underline;
+}
+
+.menuItem.open .subMenuContainer,
+.subMenuItem.open .childMenuContainer {
+  max-height: 500px; /* Adjust this value as needed */
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -18,7 +18,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body className={outfit.className} suppressHydrationWarning={true}>
         <StoreProvider>
           <NextUiProvider>
+            <div className="dark:bg-[#121212]">
             {children}
+            </div>
           </NextUiProvider>
         </StoreProvider>
       </body>
