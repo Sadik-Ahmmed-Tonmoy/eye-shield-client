@@ -550,7 +550,7 @@ const DropDownMenus = () => {
         >
           <div className="max-h-[calc(100vh-170px)] overflow-hidden overflow-y-auto slim-scroll  text-sm grid grid-cols-2 xl:grid-cols-3 sm:gap-3 lg:gap-10 p-4">
             {sunglasses?.subMenu.map((item, index) => (
-              <div key={index} className="flex items-start gap-4">
+              <div key={index} className="flex flex-col md:flex-row items-start md:gap-4">
                 <div>
                   <Link href={""}>
                     <div className="sm:h-20 sm:w-20 md:h-24 md:w-24 lg:h-36 lg:w-36">
@@ -578,10 +578,10 @@ const DropDownMenus = () => {
             ))}
           </div>
         </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Optical Glasses" href="/" className="-translate-x-[455px]  2xl:-translate-x-[680px] ">
-          <div className="max-h-[calc(100vh-170px)] overflow-hidden overflow-y-auto slim-scroll  text-sm grid grid-cols-2 xl:grid-cols-3 sm:gap-3 lg:gap-10 p-4">
+        <MenuItem setActive={setActive} active={active} item="Optical Glasses" href="/" className="sm:-translate-x-[200px] md:-translate-x-[245px] lg:-translate-x-[430px] xl:-translate-x-[640px] 2xl:-translate-x-[660px] ">
+          <div className="max-h-[calc(100vh-170px)] overflow-hidden overflow-y-auto slim-scroll  text-sm grid grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-10 p-4">
             {opticalGlasses?.subMenu.map((item, index) => (
-              <div key={index} className="flex items-start gap-4">
+              <div key={index} className="flex flex-col md:flex-row items-start gap-1 md:gap-4">
                 <div>
                   <Link href={""}>
                     <div className="sm:h-20 sm:w-20 md:h-24 md:w-24 lg:h-36 lg:w-36">
@@ -592,7 +592,8 @@ const DropDownMenus = () => {
                 <div className="flex flex-col lg:gap-1 whitespace-nowrap">
                   <Link href={""}>
                     <h3 className={` hover:text-[#00a76b] text-xl w-min font-bold relative group cursor-pointer`}>
-                      {item.subMenuTitle}
+                      
+                      {item.subMenuTitle.length > 20 ? item.subMenuTitle.substring(0, 20) + "..." : item.subMenuTitle}
                       <span className="absolute left-0 bottom-0 h-0.5 w-full bg-[#00a76b] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
                     </h3>
                   </Link>
@@ -607,7 +608,7 @@ const DropDownMenus = () => {
                 </div>
               </div>
             ))}
-            <ProductItem
+            {/* <ProductItem
               title="Anti-Reflective Coating"
               href=""
               src="https://da4e1j5r7gw87.cloudfront.net/wp-content/uploads/sites/4460/2023/06/Glasses-On-The-Road.jpg"
@@ -618,14 +619,14 @@ const DropDownMenus = () => {
               href=""
               src="https://www.cnet.com/a/img/toFeyyNRJ23GqHaZQFM-kfTJRYc/u003d/940x0/2020/07/17/e1c89e0d-6662-4bbc-b564-14a0b63544a4/blueease.jpg"
               description="Glasses for computer use"
-            />
+            /> */}
           </div>
         </MenuItem>
 
-        <MenuItem setActive={setActive} active={active} item="Brands" className=" -translate-x-[613px] xl:-translate-x-[712px] ">
+        <MenuItem setActive={setActive} active={active} item="Brands" className=" -translate-x-[350px] md:-translate-x-[345px] lg:-translate-x-[612px] xl:-translate-x-[712px] ">
           <div
             // style={{ boxShadow: "0px 4px 20px 0px rgba(36, 52, 58, 0.10)" }}
-            className={`max-h-[calc(100vh-170px)] overflow-y-auto slim-scroll min-h-[412px] md:w-[728px] lg:w-[1000px] xl:w-[1202px] md:-left-[207px] lg:-left-[206px] xl:-left-[180px] 2xl:-left-14  z-10 flex top-[52px] rounded overflow-hidden `}
+            className={`max-h-[calc(100vh-170px)] overflow-y-auto slim-scroll min-h-[412px] sm:w-[595px] md:w-[728px] lg:w-[1000px] xl:w-[1202px] md:-left-[207px] lg:-left-[206px] xl:-left-[180px] 2xl:-left-14  z-10 flex top-[52px] rounded overflow-hidden `}
           >
             {/* left side start */}
             <div className=" w-5/12">
@@ -729,9 +730,9 @@ const DropDownMenus = () => {
           active={active}
           item="Blogs"
           href="/"
-          className=" -translate-x-[540px] lg:-translate-x-[660px] xl:-translate-x-[785px]"
+          className=" -translate-x-[375px] lg:-translate-x-[600px] 2xl:-translate-x-[910px]"
         >
-          <div className=" max-h-[calc(100vh-170px)] overflow-hidden overflow-y-auto slim-scroll  text-sm grid grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10 p-4">
+          <div className=" max-h-[calc(100vh-170px)] overflow-hidden overflow-y-auto slim-scroll  text-sm grid grid-cols-2  lg:grid-cols-3 2xl:grid-cols-5 gap-x-20 gap-y-4 md:gap-x-24  p-4">
             {blog?.subMenu.map((item, index) => (
               <div key={index} className="flex items-start gap-4">
                 <div className="h-14 w-14">

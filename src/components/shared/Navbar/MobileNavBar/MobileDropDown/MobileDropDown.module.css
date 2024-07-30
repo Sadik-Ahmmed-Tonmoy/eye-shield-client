@@ -1,0 +1,71 @@
+/* components/MobileDropDown.module.css */
+.dropdown {
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menuItem {
+  position: relative;
+  border-bottom: 1px solid #444;
+}
+
+.menuLink {
+  display: block;
+  padding: 1rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.menuHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.arrow {
+  font-size: 1rem;
+}
+
+.subMenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: #444;
+}
+
+.subMenuItem {
+  border-bottom: 1px solid #555;
+}
+
+.subMenuLink {
+  display: block;
+  padding: 1rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.childMenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: #555;
+}
+
+.childMenuItem {
+  border-bottom: 1px solid #666;
+}
+
+.childMenuLink {
+  display: block;
+  padding: 1rem;
+  color: #fff;
+  text-decoration: none;
+}

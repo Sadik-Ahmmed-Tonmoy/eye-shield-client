@@ -8,6 +8,7 @@ import MyFormInputAceternity from "@/components/ui/MyForm/MyFormInputAceternity/
 import { IoSearchSharp } from "react-icons/io5";
 import { FieldValues } from "react-hook-form";
 import DropDownMenus from "../DropDownMenus/DropDownMenus";
+import MobileDropDown from "./MobileDropDown/MobileDropDown";
 // import {AcmeLogo} from "./AcmeLogo.jsx";
 
 export default function MobileNavBar() {
@@ -76,13 +77,9 @@ export default function MobileNavBar() {
 
       {/* mobile menu items start */}
       <NavbarMenu>
-        {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
-            <Link className="w-full" color={index === 2 ? "warning" : index === menuItems.length - 1 ? "danger" : "foreground"} href="#" size="lg">
-              {item}
-            </Link>
-          </NavbarMenuItem>
-        ))}
+     <div>
+     <MobileDropDown/>
+     </div>
       </NavbarMenu>
       {/* mobile menu items end */}
     </Navbar>
