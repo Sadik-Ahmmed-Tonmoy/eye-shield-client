@@ -9,10 +9,12 @@ export const FollowerPointerCard = ({
   children,
   className,
   title,
+  pointerColor="sky-900",
 }: {
   children: React.ReactNode;
   className?: string;
   title?: string | React.ReactNode;
+  pointerColor?: string;
 }) => {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -53,7 +55,7 @@ export const FollowerPointerCard = ({
       className={cn("relative", className)}
     >
       <AnimatePresence>
-        {isInside && <FollowPointer x={x} y={y} title={title} />}
+        {isInside && <FollowPointer x={x} y={y} title={title} pointerColor={pointerColor} />}
       </AnimatePresence>
       {children}
     </div>
@@ -64,10 +66,12 @@ export const FollowPointer = ({
   x,
   y,
   title,
+  pointerColor,
 }: {
   x: any;
   y: any;
   title?: string | React.ReactNode;
+  pointerColor?: string;
 }) => {
   const colors = [
     "var(--sky-500)",
@@ -104,7 +108,7 @@ export const FollowPointer = ({
         fill="currentColor"
         strokeWidth="1"
         viewBox="0 0 16 16"
-        className="h-6 w-6 text-sky-500 transform -rotate-[70deg] -translate-x-[12px] -translate-y-[10px] stroke-sky-600"
+        className={`h-6 w-6 text-${pointerColor} transform -rotate-[70deg] -translate-x-[12px] -translate-y-[10px] stroke-sky-600`}
         height="1em"
         width="1em"
         xmlns="http://www.w3.org/2000/svg"
