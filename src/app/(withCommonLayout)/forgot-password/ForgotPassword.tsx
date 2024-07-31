@@ -17,7 +17,7 @@ export function ForgotPassword() {
   return (
     <div
       style={{ boxShadow: "0px 0px 16px 0px rgba(228, 237, 240, 0.80)" }}
-      className="max-w-xl w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black my-8"
+      className="max-w-xl w-full relative mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black my-8"
     >
       <h3 className="text-center text-3xl">LOGO</h3>
 
