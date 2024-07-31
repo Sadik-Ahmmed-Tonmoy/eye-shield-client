@@ -7,6 +7,7 @@ import { BackgroundBeams } from "@/components/ui/background-beams";
 import { FollowerPointerCard } from "@/components/ui/following-pointer";
 import { Highlight, HeroHighlight } from "@/components/ui/hero-highlight";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+import { WobbleCard } from "@/components/ui/wobble-card";
 
 const HeroSection = () => {
   const fakeData = [
@@ -49,48 +50,98 @@ const HeroSection = () => {
 
   const words = `Oxygen gets you high. In a catastrophic em `;
   return (
-    <FollowerPointerCard className="">
-      <div className="h-[calc(100vh-300px)] bg-[#3aa1a7] dark:bg-dot-white/[0.3] bg-dot-black/[0.3] flex justify-center items-center relative overflow-hidden">
-        <Image src={ellipseImage} alt="" className="h-[80%] w-[80%] opacity-55" height={50} width={50} />
-        <TextGenerateEffect words={words} className="absolute"/>
-        <AnimatePresence>
-          <motion.img
-            key={currentItem.image}
-            src={currentItem.image}
-            alt={currentItem.title}
-            className="absolute z-10 h-[100%] w-[40%] object-cover"
-            initial={{ opacity: 0, x: "-100vw" }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: "100vw" }}
-            whileInView={{ scale: [1, 1.2, 1] }}
-            //   transition={{ duration: 1, delay: 1 }}
-            transition={{
-              x: { duration: 1.5, ease: [0.43, 0.13, 0.23, 0.96] },
-              opacity: { duration: 0.8 },
-              scale: { duration: 1, delay: 0.9 },
-            }}
-          />
-          <motion.div
-            key={currentItem.id}
-            className="absolute z-10 bottom-10 left-10 text-white"
-            initial={{ opacity: 0, x: "-100vw" }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: "100vw" }}
-            //   transition={{ duration: 1, delay: 1 }}
-            transition={{
-              x: { duration: 1.5, ease: [0.43, 0.13, 0.23, 0.96] },
-              opacity: { duration: 0.8 },
-              scale: { duration: 2, delay: 0.5 },
-            }}
-          >
-            <h2 className="text-4xl font-bold">{currentItem.title}</h2>
-            <p className="text-lg mt-2">{currentItem.description}</p>
-          </motion.div>
-        </AnimatePresence>
-        <BackgroundBeams />
-        {/* <div className="absolute inset-0 bg-dot-thick-neutral-200 pointer-events-none [mask-image:radial-gradient(ellipse_at_center,black,transparent_90%)]" /> */}
-      </div>
-    </FollowerPointerCard>
+    <>
+      {/* <FollowerPointerCard className="">
+        <div className="h-[calc(100vh-300px)] bg-[#3aa1a7] dark:bg-dot-white/[0.3] bg-dot-black/[0.3] flex justify-center items-center relative overflow-hidden">
+          <Image src={ellipseImage} alt="" className="h-[80%] w-[80%] opacity-55" height={50} width={50} />
+          <TextGenerateEffect words={words} className="absolute" />
+          <AnimatePresence>
+            <motion.img
+              key={currentItem.image}
+              src={currentItem.image}
+              alt={currentItem.title}
+              className="absolute z-10 h-[100%] w-[40%] object-cover"
+              initial={{ opacity: 0, x: "-100vw" }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: "100vw" }}
+              whileInView={{ scale: [1, 1.2, 1] }}
+              transition={{
+                x: { duration: 1.5, ease: [0.43, 0.13, 0.23, 0.96] },
+                opacity: { duration: 0.8 },
+                scale: { duration: 1, delay: 0.9 },
+              }}
+            />
+            <motion.div
+              key={currentItem.id}
+              className="absolute z-10 bottom-10 left-10 text-white"
+              initial={{ opacity: 0, x: "-100vw" }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: "100vw" }}
+              transition={{
+                x: { duration: 1.5, ease: [0.43, 0.13, 0.23, 0.96] },
+                opacity: { duration: 0.8 },
+                scale: { duration: 2, delay: 0.5 },
+              }}
+            >
+              <h2 className="text-4xl font-bold">{currentItem.title}</h2>
+              <p className="text-lg mt-2">{currentItem.description}</p>
+            </motion.div>
+          </AnimatePresence>
+          <BackgroundBeams />
+          <div className="absolute inset-0 bg-dot-thick-neutral-200 pointer-events-none [mask-image:radial-gradient(ellipse_at_center,black,transparent_90%)]" />
+        </div>
+      </FollowerPointerCard> */}
+
+      <HeroHighlight>
+      {/* <BackgroundBeams /> */}
+        <div className="">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 px-4 mx-auto w-full">
+            <WobbleCard containerClassName="col-span-1 lg:col-span-2 h-full bg-pink-800 min-h-[500px] lg:min-h-[300px]" className="">
+              <div className="max-w-xs">
+                <h2 className="text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
+                  Gippity AI powers the entire universe
+                </h2>
+                <p className="mt-4 text-left  text-base/6 text-neutral-200">
+                  With over 100,000 mothly active bot users, Gippity AI is the most popular AI platform for developers.
+                </p>
+              </div>
+              <Image
+                src="/linear.webp"
+                width={500}
+                height={500}
+                alt="linear demo image"
+                className="absolute -right-4 lg:-right-[40%] grayscale filter -bottom-10 object-contain rounded-2xl"
+              />
+            </WobbleCard>
+            <WobbleCard containerClassName="col-span-1 min-h-[300px]">
+              <h2 className="max-w-80  text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
+                No shirt, no shoes, no weapons.
+              </h2>
+              <p className="mt-4 max-w-[26rem] text-left  text-base/6 text-neutral-200">
+                If someone yells “stop!”, goes limp, or taps out, the fight is over.
+              </p>
+            </WobbleCard>
+            <WobbleCard containerClassName="col-span-1 lg:col-span-3 bg-blue-900 min-h-[500px] lg:min-h-[600px] xl:min-h-[300px]">
+              <div className="max-w-sm">
+                <h2 className="max-w-sm md:max-w-lg  text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
+                  Signup for blazing-fast cutting-edge state of the art Gippity AI wrapper today!
+                </h2>
+                <p className="mt-4 max-w-[26rem] text-left  text-base/6 text-neutral-200">
+                  With over 100,000 mothly active bot users, Gippity AI is the most popular AI platform for developers.
+                </p>
+              </div>
+              <Image
+                src="/linear.webp"
+                width={500}
+                height={500}
+                alt="linear demo image"
+                className="absolute -right-10 md:-right-[40%] lg:-right-[20%] -bottom-10 object-contain rounded-2xl"
+              />
+            </WobbleCard>
+          </div>
+        </div>
+      </HeroHighlight>
+    </>
   );
 };
 
