@@ -9,6 +9,8 @@ import { Highlight, HeroHighlight } from "@/components/ui/hero-highlight";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { WobbleCard } from "@/components/ui/wobble-card";
 import { TextRevealCard, TextRevealCardDescription, TextRevealCardTitle } from "@/components/ui/text-reveal-card";
+import AddToCartCard from "@/components/ui/AddToCartCard/AddToCartCard";
+import SingleCardSwiper from "@/components/ui/SingleCardSwiper/SingleCardSwiper";
 
 const HeroSection = () => {
   const fakeData = [
@@ -94,47 +96,19 @@ const HeroSection = () => {
       </FollowerPointerCard> */}
 
       <HeroHighlight>
-      {/* <BackgroundBeams /> */}
+        {/* <BackgroundBeams /> */}
         <div className="">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 px-4 mx-auto w-full">
-            <WobbleCard containerClassName="col-span-1 lg:col-span-2 h-full bg-pink-800 min-h-[500px] lg:min-h-[300px]" className="">
-              
-              
-
-
-            {/* <div className="flex items-center justify-center bg-[#0E0E10] rounded-2xl w-full"> */}
-      <TextRevealCard
-        text={`${"Why shades?"}`}
-        revealText={`${"To look cool!"}`}
-      >
-        <TextRevealCardTitle>
-          Sometimes, you just need to see it.
-        </TextRevealCardTitle>
-        <TextRevealCardDescription>
-          This is a text reveal card. Hover over the card to reveal the hidden
-          text.
-        </TextRevealCardDescription>
-      </TextRevealCard>
-    {/* </div> */}
-
-
-              {/* <Image
-                src="/linear.webp"
-                width={500}
-                height={500}
-                alt="linear demo image"
-                className="absolute -right-4 lg:-right-[40%] grayscale filter -bottom-10 object-contain rounded-2xl"
-              /> */}
+          
+            <WobbleCard containerClassName="col-span-1 bg-[#3aa1a7]">
+              <div className="flex items-center justify-center bg-[#0E0E10]  rounded-2xl ">
+                <TextRevealCard text={`${"Why shades?"}`} revealText={`${"To look cool!"}`}></TextRevealCard>
+              </div>
             </WobbleCard>
-            <WobbleCard containerClassName="col-span-1 min-h-[300px]">
-              <h2 className="max-w-80  text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
-                No shirt, no shoes, no weapons.
-              </h2>
-              <p className="mt-4 max-w-[26rem] text-left  text-base/6 text-neutral-200">
-                If someone yells “stop!”, goes limp, or taps out, the fight is over.
-              </p>
+            <WobbleCard containerClassName="col-span-1 lg:col-span-2 h-full  min-h-[500px] lg:min-h-[300px] bg-[#3aa1a7] " className="">
+              <SingleCardSwiper />
             </WobbleCard>
-            <WobbleCard containerClassName="col-span-1 lg:col-span-3 bg-blue-900 min-h-[500px] lg:min-h-[600px] xl:min-h-[300px]">
+            <WobbleCard containerClassName="col-span-1 lg:col-span-3 bg-[#3aa1a7] min-h-[500px] lg:min-h-[600px] xl:min-h-[300px]">
               <div className="max-w-sm">
                 <h2 className="max-w-sm md:max-w-lg  text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
                   Signup for blazing-fast cutting-edge state of the art Gippity AI wrapper today!
@@ -143,13 +117,13 @@ const HeroSection = () => {
                   With over 100,000 mothly active bot users, Gippity AI is the most popular AI platform for developers.
                 </p>
               </div>
-              <Image
+              {/* <Image
                 src="/linear.webp"
                 width={500}
                 height={500}
                 alt="linear demo image"
                 className="absolute -right-10 md:-right-[40%] lg:-right-[20%] -bottom-10 object-contain rounded-2xl"
-              />
+              /> */}
             </WobbleCard>
           </div>
         </div>

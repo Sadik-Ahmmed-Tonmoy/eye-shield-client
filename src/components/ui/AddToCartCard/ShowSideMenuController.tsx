@@ -10,7 +10,7 @@ const ShowSideMenuController = ({ children }: { children: React.ReactNode }) => 
     <div
       onMouseEnter={() => setIsSideOptionsVisible(true)}
       onMouseLeave={() => setIsSideOptionsVisible(false)}
-      className="relative "
+      className="relative max-w-[350px]"
     >
       {children}
 
