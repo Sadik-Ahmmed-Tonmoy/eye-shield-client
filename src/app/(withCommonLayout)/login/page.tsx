@@ -1,8 +1,4 @@
-import MyFormInput from "@/components/ui/MyForm/MyFormInput/MyFormInputHTML";
-import MyFormWrapper from "@/components/ui/MyForm/MyFormWrapper/MyFormWrapper";
-import React from "react";
 import { LoginWithEmail } from "./LoginWithEmail";
-import { BackgroundBeams } from "@/components/ui/background-beams";
 
 const LoginPage = () => {
   interface FormValues {
@@ -15,8 +11,7 @@ const LoginPage = () => {
   };
 
   return (
-    <div>
-      <BackgroundBeams />
+    <div className="dark:bg-dot-white/[0.3] bg-dot-black/[0.3] pb-3">
       <LoginWithEmail />
     </div>
   );

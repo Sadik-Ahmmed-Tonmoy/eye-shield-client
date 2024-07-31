@@ -1,12 +1,10 @@
-import React from 'react';
 import { ForgotPassword } from './ForgotPassword';
-import { BackgroundBeams } from '@/components/ui/background-beams';
 
 const ForgotPasswordPage = () => {
     return (
-        <div>
-            <BackgroundBeams />
+        <div className="dark:bg-dot-white/[0.3] bg-dot-black/[0.3] pb-3">
             <ForgotPassword/>
+            
         </div>
     );
 };

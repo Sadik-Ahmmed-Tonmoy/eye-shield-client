@@ -1,11 +1,8 @@
-import React from 'react';
 import { RegisterWithEmail } from './RegisterWithEmail';
-import { BackgroundBeams } from '@/components/ui/background-beams';
 
 const RegisterPage = () => {
     return (
-        <div>
-            <BackgroundBeams />
+        <div className="dark:bg-dot-white/[0.3] bg-dot-black/[0.3] pb-3">
             <RegisterWithEmail/>
         </div>
     );

@@ -8,6 +8,7 @@ import { FollowerPointerCard } from "@/components/ui/following-pointer";
 import { Highlight, HeroHighlight } from "@/components/ui/hero-highlight";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { WobbleCard } from "@/components/ui/wobble-card";
+import { TextRevealCard, TextRevealCardDescription, TextRevealCardTitle } from "@/components/ui/text-reveal-card";
 
 const HeroSection = () => {
   const fakeData = [
@@ -97,21 +98,33 @@ const HeroSection = () => {
         <div className="">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 px-4 mx-auto w-full">
             <WobbleCard containerClassName="col-span-1 lg:col-span-2 h-full bg-pink-800 min-h-[500px] lg:min-h-[300px]" className="">
-              <div className="max-w-xs">
-                <h2 className="text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
-                  Gippity AI powers the entire universe
-                </h2>
-                <p className="mt-4 text-left  text-base/6 text-neutral-200">
-                  With over 100,000 mothly active bot users, Gippity AI is the most popular AI platform for developers.
-                </p>
-              </div>
-              <Image
+              
+              
+
+
+            {/* <div className="flex items-center justify-center bg-[#0E0E10] rounded-2xl w-full"> */}
+      <TextRevealCard
+        text={`${"Why shades?"}`}
+        revealText={`${"To look cool!"}`}
+      >
+        <TextRevealCardTitle>
+          Sometimes, you just need to see it.
+        </TextRevealCardTitle>
+        <TextRevealCardDescription>
+          This is a text reveal card. Hover over the card to reveal the hidden
+          text.
+        </TextRevealCardDescription>
+      </TextRevealCard>
+    {/* </div> */}
+
+
+              {/* <Image
                 src="/linear.webp"
                 width={500}
                 height={500}
                 alt="linear demo image"
                 className="absolute -right-4 lg:-right-[40%] grayscale filter -bottom-10 object-contain rounded-2xl"
-              />
+              /> */}
             </WobbleCard>
             <WobbleCard containerClassName="col-span-1 min-h-[300px]">
               <h2 className="max-w-80  text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">

@@ -1,11 +1,8 @@
-import React from 'react';
 import { OTPVerification } from './OTPVerification';
-import { BackgroundBeams } from '@/components/ui/background-beams';
 
 const OTPVerificationPage = () => {
     return (
-        <div>
-            <BackgroundBeams />
+        <div className="dark:bg-dot-white/[0.3] bg-dot-black/[0.3] pb-3">
             <OTPVerification/>
         </div>
     );
