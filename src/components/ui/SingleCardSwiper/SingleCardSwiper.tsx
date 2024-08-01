@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -17,6 +17,20 @@ import { Swiper as TSwiper } from 'swiper/types';
 
 export default function SingleCardSwiper() {
   const swiperRef = useRef<TSwiper | null>(null);
+  const [isBeginning, setIsBeginning] = useState(true);
+  const [isEnd, setIsEnd] = useState(true);
+
+  useEffect(() => {
+    if (swiperRef.current) {
+      setIsBeginning(swiperRef.current.isBeginning);
+      setIsEnd(swiperRef.current.isEnd);
+
+      swiperRef.current.on('slideChange', () => {
+        setIsBeginning(swiperRef.current!.isBeginning);
+        setIsEnd(swiperRef.current!.isEnd);
+      });
+    }
+  }, []);
 
   return (
     <>
@@ -24,6 +38,7 @@ export default function SingleCardSwiper() {
         effect={'coverflow'}
         grabCursor={false}
         centeredSlides={true}
+        loop={true}
         slidesPerView={'auto'}
         coverflowEffect={{
           rotate: 50,
@@ -32,10 +47,12 @@ export default function SingleCardSwiper() {
           modifier: 1,
           slideShadows: true,
         }}
-        pagination={true}
+        pagination={{
+          clickable: true,
+        }}
         navigation={{
-          prevEl: '.swiper-button-prev',
-          nextEl: '.swiper-button-next',
+          prevEl: '.custom-swiper-button-prev',
+          nextEl: '.custom-swiper-button-next',
         }}
         modules={[FreeMode, EffectCoverflow, Pagination, Navigation]}
         className="mySwiper"
@@ -60,13 +77,16 @@ export default function SingleCardSwiper() {
           <AddToCartCard id="525" />
         </SwiperSlide>
       </Swiper>
-      <div className="swiper-button-prev">
-      
+      <div
+        className={`custom-swiper-button-prev ${isBeginning ? 'disabled' : ''}`}
+      >
+        {"<"}
       </div>
-      <div className="swiper-button-next">
-
+      <div
+        className={`custom-swiper-button-next ${isEnd ? 'disabled' : ''}`}
+      >
+        {">"}
       </div>
-
     </>
   );
 }

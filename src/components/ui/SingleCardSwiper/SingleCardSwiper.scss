@@ -16,30 +16,51 @@
     width: 100%;
   }
 
-  /* SingleCardSwiper.scss */
-
+// Hide the default Swiper buttons
 .swiper-button-prev,
 .swiper-button-next {
-  width: 40px;
-  height: 40px;
+  display: none;
+}
+
+// Custom styles for navigation buttons
+.custom-swiper-button-prev,
+.custom-swiper-button-next {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 40px;
+  height: 40px;
   background-color: #000;
   color: #fff;
   border-radius: 50%;
-  font-size: 20px;
   cursor: pointer;
   position: absolute;
-  top: 50%;
+  bottom: 0%;
   transform: translateY(-50%);
   z-index: 10;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #333;
+  }
 }
 
-.swiper-button-prev {
-  left: 10px;
+// Styles for disabled buttons
+.custom-swiper-button-prev.disabled,
+.custom-swiper-button-next.disabled {
+  background-color: #888;
+  cursor: not-allowed;
+
+  &:hover {
+    background-color: #888;
+  }
 }
 
-.swiper-button-next {
-  right: 10px;
+// Positioning the custom buttons
+.custom-swiper-button-prev {
+  left: 80%;
+}
+
+.custom-swiper-button-next {
+  right: 10%;
 }

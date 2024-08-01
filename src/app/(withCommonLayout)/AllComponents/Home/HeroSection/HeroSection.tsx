@@ -100,12 +100,16 @@ const HeroSection = () => {
         <div className="">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 px-4 mx-auto w-full">
           
-            <WobbleCard containerClassName="col-span-1 bg-[#3aa1a7]">
-              <div className="flex items-center justify-center bg-[#0E0E10]  rounded-2xl ">
+            <WobbleCard containerClassName="col-span-1 bg-[#3aa1a7] ">
+              <div className="absolute inset-0 bg-dot-thick-neutral-200 pointer-events-none [mask-image:radial-gradient(ellipse_at_center,black,transparent_90%)]" />
+              <div className="flex items-center justify-center bg-[#0E0E10  rounded-2xl ">
                 <TextRevealCard text={`${"Why shades?"}`} revealText={`${"To look cool!"}`}></TextRevealCard>
               </div>
+     
             </WobbleCard>
             <WobbleCard containerClassName="col-span-1 lg:col-span-2 h-full  min-h-[500px] lg:min-h-[300px] bg-[#3aa1a7] " className="">
+            <div className="absolute inset-0 bg-dot-thick-neutral-200 pointer-events-none [mask-image:radial-gradient(ellipse_at_center,black,transparent_90%)]" />
+     <h3 className="text-3xl font-semibold text-center mt-2">Featured</h3>
               <SingleCardSwiper />
             </WobbleCard>
             <WobbleCard containerClassName="col-span-1 lg:col-span-3 bg-[#3aa1a7] min-h-[500px] lg:min-h-[600px] xl:min-h-[300px]">
