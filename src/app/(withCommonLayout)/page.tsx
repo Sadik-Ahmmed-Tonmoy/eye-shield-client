@@ -9,8 +9,9 @@ const HomePage = () => {
   const fakeCardCount = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   return (
     <>
+        <ScrollAnimationEffect />
       <HeroSection />
-      <CenterZoomParallax />
+      {/* <CenterZoomParallax /> */}
 
       <MyContainer className="grid grid-cols-4 gap-10">
         {fakeCardCount.map((item) => (
@@ -18,7 +19,6 @@ const HomePage = () => {
         ))}
       </MyContainer>
       <PageHorizontalScrollCarousel />
-      <ScrollAnimationEffect />
     </>
   );
 };

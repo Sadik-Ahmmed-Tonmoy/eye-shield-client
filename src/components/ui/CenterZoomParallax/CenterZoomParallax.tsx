@@ -8,7 +8,7 @@ const CenterZoomParallax = () => {
   const parallaxContainer = useRef(null);
   const { scrollYProgress } = useScroll({
     target: parallaxContainer,
-    offset: ["start end", "end end"],
+    offset: ["start start", "end end"],
   });
 
   const scale4 = useTransform(scrollYProgress, [0, 1], [1, 4]);
