@@ -9,6 +9,7 @@ import { BsPerson } from "react-icons/bs";
 import { MdOutlineShoppingBag } from "react-icons/md";
 import DropDownMenus from "../DropDownMenus/DropDownMenus";
 import styles from "./PCNavBar.module.css";
+import TransitionLink from "@/components/ui/TransitionLink/TransitionLink";
 
 interface BrandItem {
   id: number;
@@ -77,7 +78,7 @@ const PCNavBar = () => {
         </div>
 
         <div className=" flex items-center gap-5 text-xs whitespace-nowrap">
-          <Link href={"/login"}>
+          <TransitionLink href={"/login"}>
             <button className={`${styles.accountButton} ${styles.textHoverEffect}`}>
               <BsPerson className="w-6 h-6" />
 
@@ -86,7 +87,7 @@ const PCNavBar = () => {
                 <span className={styles.text}>Account</span>
               </span>
             </button>
-          </Link>
+          </TransitionLink>
 
           <button className={`${styles.accountButton} ${styles.textHoverEffect}`}>
             <AiOutlineHeart className="w-6 h-6 " />
