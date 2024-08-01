@@ -9,15 +9,16 @@ const HomePage = () => {
   const fakeCardCount = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   return (
     <>
-    <CenterZoomParallax/>
       <HeroSection />
-      <PageHorizontalScrollCarousel />
-      <ScrollAnimationEffect />
+      <CenterZoomParallax />
+
       <MyContainer className="grid grid-cols-4 gap-10">
         {fakeCardCount.map((item) => (
           <AddToCartCard key={item} id={item.toString()} />
         ))}
       </MyContainer>
+      <PageHorizontalScrollCarousel />
+      <ScrollAnimationEffect />
     </>
   );
 };

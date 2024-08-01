@@ -17,8 +17,12 @@
     background: #555; /* Thumb color on hover */
 }
 
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
 
 

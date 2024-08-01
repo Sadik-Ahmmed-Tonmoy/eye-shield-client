@@ -6,7 +6,7 @@ const Footer = () => {
     return (
         <div>
             Footer
-            <FloatButton.BackTop />
+            {/* <FloatButton.BackTop /> */}
         </div>
     );
 };

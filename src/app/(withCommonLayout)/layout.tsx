@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 const commonLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="overflow-hidden">
+    <div className="">
       <Navbar />
       <div className=" mt-[145px]">{children}</div>
       <Footer />
