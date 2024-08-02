@@ -1,5 +1,6 @@
 "use client";
-import { useMotionValueEvent, useScroll, useTransform } from "framer-motion";
+import { TextRevealCard } from "@/components/ui/text-reveal-card";
+import { useMotionValueEvent, useScroll, useTransform, motion } from "framer-motion";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 const ScrollAnimationEffect = () => {
@@ -49,10 +50,10 @@ const ScrollAnimationEffect = () => {
   useEffect(() => {
     if (images.length > 0 && canvasRef.current) {
       const canvas = canvasRef.current;
-      const ctx = canvas.getContext('2d');
+      const ctx = canvas.getContext("2d");
       if (ctx) {
         const img = new Image();
-        img.src = '/sunglassGreenEffectImages/1.webp';
+        img.src = "/sunglassGreenEffectImages/1.webp";
         img.onload = () => {
           ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
         };
@@ -61,7 +62,15 @@ const ScrollAnimationEffect = () => {
   }, [images]);
 
   return (
-    <div className="relative h-screen">
+    <div className="relative h-screen -mt-[160px]">
+      <motion.div
+        initial={{ opacity: 0, y: -100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ type: "spring", duration: 2, bounce: 0.7, damping: 5, stiffness: 100, delay: 1, ease: "easeInOut" }}
+        className="text-3xl text-white text-center  sticky top-[35%]  flex justify-center items-center inset-0"
+      >
+            <TextRevealCard text={`${"Why don't sunglass lenses ever get lost?"}`} revealText={`${"Because they always stay 'focused'!"}`}></TextRevealCard>
+      </motion.div>
       <div
         style={{
           display: "flex",
@@ -70,13 +79,7 @@ const ScrollAnimationEffect = () => {
         }}
         className="h-screen"
       >
-        <canvas
-          className="h-screen w-screen"
-          width={1000}
-          height={500}
-          ref={canvasRef}
-          style={{ display: imagesLoaded ? "block" : "none" }}
-        />
+        <canvas className="h-screen w-screen" width={1000} height={500} ref={canvasRef} style={{ display: imagesLoaded ? "block" : "none" }} />
       </div>
     </div>
   );
