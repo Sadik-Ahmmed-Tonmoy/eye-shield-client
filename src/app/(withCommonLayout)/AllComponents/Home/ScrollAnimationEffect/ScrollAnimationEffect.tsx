@@ -16,7 +16,7 @@ const ScrollAnimationEffect = () => {
     if (typeof window !== "undefined") {
       const loadedImages: HTMLImageElement[] = [];
 
-      for (let i = 1; i <= 269; i++) {
+      for (let i = 1; i <= 162; i++) {
         const img = new Image();
         img.src = `/sunglassGreenEffectImages/${i}.webp`;
         loadedImages.push(img);
@@ -40,7 +40,7 @@ const ScrollAnimationEffect = () => {
     [images]
   );
 
-  const currentIndex = useTransform(scrollYProgress, [0, 1], [1, 269]);
+  const currentIndex = useTransform(scrollYProgress, [0, 1], [1, 162]);
 
   useMotionValueEvent(currentIndex, "change", (latest) => {
     render(Number(latest.toFixed()));
