@@ -70,7 +70,7 @@ const ScrollAnimationEffect = () => {
         imagesLoaded &&   <motion.div
         initial={{ opacity: 0, y: -100 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ type: "spring", duration: 2, bounce: 0.8, damping: 5, stiffness: 100, delay: 0, ease: "easeInOut", }}
+        transition={{ type: "spring", duration: 2, bounce: 0.8, damping: 5, stiffness: 100, delay: 0.5, ease: "easeInOut", }}
         
         className="text-3xl text-white text-center  sticky top-[35%]  flex justify-center items-center inset-0"
         >
