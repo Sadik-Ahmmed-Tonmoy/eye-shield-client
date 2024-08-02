@@ -1,13 +1,14 @@
 "use client";
 import { useMotionValueEvent, useScroll, useTransform } from "framer-motion";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 const ScrollAnimationEffect = () => {
-  const ref = useRef<HTMLCanvasElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const [images, setImages] = useState<HTMLImageElement[]>([]);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
 
   const { scrollYProgress } = useScroll({
-    target: ref,
+    target: canvasRef,
     offset: ["center end", "end start"],
   });
 
@@ -15,22 +16,23 @@ const ScrollAnimationEffect = () => {
     if (typeof window !== "undefined") {
       const loadedImages: HTMLImageElement[] = [];
 
-      for (let i = 1; i <= 237; i++) {
+      for (let i = 1; i <= 402; i++) {
         const img = new Image();
-        img.src = `/sunglassImages/${i}.webp`;
+        img.src = `/sunglassGreenEffectImages/${i}.webp`;
         loadedImages.push(img);
       }
 
       setImages(loadedImages);
+      setImagesLoaded(true);
     }
   }, []);
 
   const render = useCallback(
     (index: number) => {
-      if (images[index - 1] && ref.current) {
-        const context = ref.current.getContext("2d");
+      if (images[index - 1] && canvasRef.current) {
+        const context = canvasRef.current.getContext("2d");
         if (context) {
-          context.clearRect(0, 0, ref.current.width, ref.current.height); // Clear the canvas
+          context.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height); // Clear the canvas
           context.drawImage(images[index - 1], 0, 0);
         }
       }
@@ -38,31 +40,43 @@ const ScrollAnimationEffect = () => {
     [images]
   );
 
-  const currentIndex = useTransform(scrollYProgress, [0, 1], [1, 237]);
+  const currentIndex = useTransform(scrollYProgress, [0, 1], [1, 402]);
 
   useMotionValueEvent(currentIndex, "change", (latest) => {
     render(Number(latest.toFixed()));
   });
 
   useEffect(() => {
-    if (images.length > 0) {
-      render(1);
+    if (images.length > 0 && canvasRef.current) {
+      const canvas = canvasRef.current;
+      const ctx = canvas.getContext('2d');
+      if (ctx) {
+        const img = new Image();
+        img.src = '/sunglassGreenEffectImages/1.webp';
+        img.onload = () => {
+          ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        };
+      }
     }
-  }, [images, render]);
+  }, [images]);
 
   return (
-    <div className="relative">
+    <div className="relative h-screen">
       <div
         style={{
-        //   height: "1000px",
-          backgroundColor: "black",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
         }}
+        className="h-screen"
       >
-        {/* <div style={{ height: "3000px" }} /> */}
-        <canvas className="h-screen w-screen " width={1000} height={500} ref={ref} />
+        <canvas
+          className="h-screen w-screen"
+          width={1000}
+          height={500}
+          ref={canvasRef}
+          style={{ display: imagesLoaded ? "block" : "none" }}
+        />
       </div>
     </div>
   );

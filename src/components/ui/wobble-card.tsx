@@ -30,12 +30,12 @@ export const WobbleCard = ({
         setIsHovering(false);
         setMousePosition({ x: 0, y: 0 });
       }}
-      // style={{
-      //   transform: isHovering
-      //     ? `translate3d(${mousePosition.x}px, ${mousePosition.y}px, 0) scale3d(1, 1, 1)`
-      //     : "translate3d(0px, 0px, 0) scale3d(1, 1, 1)",
-      //   transition: "transform 0.1s ease-out",
-      // }}
+      style={{
+        transform: isHovering
+          ? `translate3d(${mousePosition.x}px, ${mousePosition.y}px, 0) scale3d(1, 1, 1)`
+          : "translate3d(0px, 0px, 0) scale3d(1, 1, 1)",
+        transition: "transform 0.1s ease-out",
+      }}
       className={cn(
         "mx-auto w-full bg-indigo-800  relative rounded-2xl overflow-hidden",
         containerClassName

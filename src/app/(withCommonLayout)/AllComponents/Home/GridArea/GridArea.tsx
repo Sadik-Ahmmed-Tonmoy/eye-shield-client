@@ -12,7 +12,7 @@ import { TextRevealCard, TextRevealCardDescription, TextRevealCardTitle } from "
 import AddToCartCard from "@/components/ui/AddToCartCard/AddToCartCard";
 import SingleCardSwiper from "@/components/ui/SingleCardSwiper/SingleCardSwiper";
 
-const HeroSection = () => {
+const GridArea = () => {
   const fakeData = [
     {
       id: 1,
@@ -96,7 +96,7 @@ const HeroSection = () => {
       </FollowerPointerCard> */}
 
       <HeroHighlight>
-        {/* <BackgroundBeams /> */}
+
         <div className="">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 px-4 mx-auto w-full">
           
@@ -121,13 +121,7 @@ const HeroSection = () => {
                   With over 100,000 mothly active bot users, Gippity AI is the most popular AI platform for developers.
                 </p>
               </div>
-              {/* <Image
-                src="/linear.webp"
-                width={500}
-                height={500}
-                alt="linear demo image"
-                className="absolute -right-10 md:-right-[40%] lg:-right-[20%] -bottom-10 object-contain rounded-2xl"
-              /> */}
+          
             </WobbleCard>
           </div>
         </div>
@@ -136,4 +130,4 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection;
+export default GridArea;
