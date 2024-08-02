@@ -62,34 +62,35 @@ const ScrollAnimationEffect = () => {
   }, [images]);
 
   return (
+    <div className="dark:bg-dot-white/[0.3] bg-dot-black/[0.3] z-0">
+      <div className="relative  -mt-[160px]">
+        {imagesLoaded && (
+          <motion.div
+            initial={{ opacity: 0, y: -100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ type: "spring", duration: 2, bounce: 0.8, damping: 5, stiffness: 100, delay: 0.5, ease: "easeInOut" }}
+            className="text-3xl text-white text-center  sticky top-[35%]  flex justify-center items-center inset-0"
+          >
+            <TextRevealCard
+              text={`${"Why don't sunglass lenses ever get lost?"}`}
+              revealText={`${"Because they always stay 'focused'!"}`}
+            ></TextRevealCard>
+          </motion.div>
+        )}
 
-    <div className="dark:bg-dot-white/[0.3] bg-dot-black/[0.3]">
-
-    <div className="relative h-screen  -mt-[160px]">
-      {
-        imagesLoaded &&   <motion.div
-        initial={{ opacity: 0, y: -100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ type: "spring", duration: 2, bounce: 0.8, damping: 5, stiffness: 100, delay: 0.5, ease: "easeInOut", }}
-        
-        className="text-3xl text-white text-center  sticky top-[35%]  flex justify-center items-center inset-0"
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            paddingTop: "164px", 
+          }}
+          className="h-[calc(100vh-160px)]  overflow-hidden"
         >
-            <TextRevealCard text={`${"Why don't sunglass lenses ever get lost?"}`} revealText={`${"Because they always stay 'focused'!"}`}></TextRevealCard>
-      </motion.div>
-      }
-    
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-        className="h-screen"
-        >
-        <canvas className="h-screen w-screen" width={1000} height={500} ref={canvasRef} style={{ display: imagesLoaded ? "block" : "none" }} />
+          <canvas className="h-screen w-screen" width={1000} height={500} ref={canvasRef} style={{ display: imagesLoaded ? "block" : "none" }} />
+        </div>
       </div>
     </div>
-        </div>
   );
 };
 
