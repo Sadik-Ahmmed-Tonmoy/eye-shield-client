@@ -4,11 +4,13 @@ import PageHorizontalScrollCarousel from "@/components/ui/PageHorizontalScrollCa
 import ScrollAnimationEffect from "./AllComponents/Home/ScrollAnimationEffect/ScrollAnimationEffect";
 import GridSection from "./AllComponents/Home/GridSection/GridSection";
 import CenterZoomParallax from "@/components/ui/CenterZoomParallax/CenterZoomParallax";
+import Test from "./AllComponents/Test";
 
 const HomePage = () => {
   const fakeCardCount = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   return (
     <>
+    {/* <Test/> */}
       <ScrollAnimationEffect />
      
      <GridSection/>
@@ -21,7 +23,7 @@ const HomePage = () => {
         </MyContainer>
       </div>
 
-      <CenterZoomParallax />
+      {/* <CenterZoomParallax /> */}
       <PageHorizontalScrollCarousel />
     </>
   );
