@@ -23,7 +23,7 @@ const HomePage = () => {
         </MyContainer>
       </div>
 
-      {/* <CenterZoomParallax /> */}
+      <CenterZoomParallax />
       <PageHorizontalScrollCarousel />
     </>
   );
