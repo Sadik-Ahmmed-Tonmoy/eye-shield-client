@@ -117,7 +117,7 @@ export const TextRevealCard = ({
             // style={{ textShadow: "2px 2px 1px rgba(0, 0, 0, 0.5)" }}
             style={{ textShadow: "2px 2px 1px rgba(0, 0, 0, 0.5)" }}
           >
-            {text}
+            {text}   
           </p>
           <MemoizedStars />
         </div>
