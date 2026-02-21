@@ -15,7 +15,7 @@ const HomePage = () => {
      
      <GridSection/>
      
-      <div className=" -mt-">
+      {/* <div className=" -mt-">
         <MyContainer className="grid grid-cols-4 gap-10">
           {fakeCardCount.map((item) => (
             <AddToCartCard key={item} id={item.toString()} />
@@ -24,7 +24,7 @@ const HomePage = () => {
       </div>
 
       <CenterZoomParallax />
-      <PageHorizontalScrollCarousel />
+      <PageHorizontalScrollCarousel /> */}
     </>
   );
 };
